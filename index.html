@@ -2,17 +2,242 @@
 <html lang="">
   <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explora Mata Sul</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
+    <header>
+      <nav class="menu">
+        <ul>
+            <li class="highlight">Encontre o melhor lugar para você</li>
+            <li><a href="#nossa-regiao">Nossa Região</a></li>
+            <li><a href="#historico">Histórico</a></li>
+            <li><a href="#litoral">Litoral</a></li>
+            <li><a href="#lazer">Lazer</a></li>
+            <li><a href="#trilhas">Trilhas</a></li>
+            <li><a href="#restaurantes">Restaurantes</a></li>
+        </ul>
+        <div class="login-button">
+          Login
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="search-area">
+        <div class="search-wrapper">
+          <input type="text" placeholder="Pesquisar por lugar ou cidade">
+          <button>
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+        <div class="left-info">
+          <p>Descubra mais sobre nossa região, selecione uma cidade abaixo:</p>
+          <div class="city-list">
+              <a href="#cidade1">Cidade 1</a>
+              <a href="#cidade2">Cidade 2</a>
+              <a href="#cidade3">Cidade 3</a>
+              <a href="#cidade4">Cidade 4</a>
+          </div>
+        </div>
+        <div class="right-info">
+            <ul>
+              <li><a href="#nossa-regiao">Nossa Região</a></li>
+              <li><a href="#historico">Histórico</a></li>
+              <li><a href="#litoral">Litoral</a></li>
+              <li><a href="#lazer">Lazer</a></li>
+              <li><a href="#trilhas">Trilhas</a></li>
+              <li><a href="#restaurantes">Restaurantes</a></li>
+            </ul>
+        </div>
+    </footer>
+  </body>
+</html>
     <div id="app"></div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+
+<style scoped>
+  body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #143e30, #9CD8C3); /* Gradiente verde */
+  font-family: Arial, sans-serif;
+  color: #2C3E50;
+  min-height: 100vh; /* Garante que o fundo cubra toda a altura da janela */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menu superior */
+header {
+    background-color: #336247;
+    padding: 10px 20px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  text-align: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: px;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #5de69a;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(112, 255, 179, 0.279); /* Cor translúcida */
+  border-radius: 30%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100px; /* Tamanho do círculo */
+  height: 30px; /* Tamanho do círculo */
+}
+.highlight {
+  position: relative;
+  background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
+  border-radius: 25px / 50%; /* Vértices convexos */
+  padding: 10px 20px;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botão de Login */
+.login-button {
+  background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 25px / 50%; /* Vértices convexos */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: right;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Área de busca */
+
+.search-wrapper {
+  position: relative;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  width: 60%;
+  margin-top: 50px; 
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Adiciona espaço para o botão */
+  border: 1px solid rgba(109, 205, 186, 0.5); /* Borda sutil */
+  border-radius: 20px;
+  background-color: rgba(122, 248, 168, 0.3); /* Fundo verde translúcido */
+  color: #2C3E50; /* Cor do texto */
+  font-size: 14px;
+}
+
+.search-wrapper input::placeholder {
+  color: #7F8C8D; /* Cor do placeholder */
+}
+
+.search-wrapper button {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Ajusta a posição dentro do input */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #006168;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-wrapper button:hover {
+  color: #2980B9;
+}
+
+/* Rodapé */
+footer {
+  display: flex;
+  justify-content: space-between; /* Alinha a informação à esquerda e à direita */
+  align-items: center; /* Alinha verticalmente os conteúdos */
+  background-color: #336247; /* Fundo escuro para o footer */
+  color: #FFFFFF; /* Texto branco */
+  padding: 20px 40px; /* Espaçamento interno */
+  font-family: Arial, sans-serif;
+  position: fixed; /* Fixar o footer na parte inferior */
+  bottom: 0; /* Garantir que o footer fique na parte inferior */
+  width: 100%; /* Garantir que o footer ocupe toda a largura da página */
+  left: 0; /* Para garantir que fique alinhado à esquerda */
+}
+
+footer .left-info {
+  text-align: left; /* Alinha à esquerda */
+}
+
+footer .right-info {
+  text-align: right; /* Alinha à direita */
+}
