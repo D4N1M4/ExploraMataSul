@@ -1,37 +1,46 @@
 <template>
 <header>
     <nav class="menu">
-    <!-- Logo -->
-    <div class="logo">
-        <img src="../assets/logosite.png" alt="Explora Mata Sul" />
-    </div>
-
-    <!-- Links do Menu -->
-    <ul>
-        <li class="highlight">Encontre o melhor lugar para você</li>
-        <li><a href="#nossa-regiao">Nossa Região</a></li>
-        <li><a href="#historico">Histórico</a></li>
-        <li><a href="#litoral">Litoral</a></li>
-        <li><a href="#lazer">Lazer</a></li>
-        <li><a href="#trilhas">Trilhas</a></li>
-        <li><a href="#restaurantes">Restaurantes</a></li>
-    </ul>
-
-    <!-- Botão de Login -->
-    <div class="login-button">
-        Login
-    </div>
+        <div class="logo">
+            <img src="../assets/logosite.png" alt="Explora Mata Sul" />
+        </div>
+        <div class="busca-section">
+            <button class="busca-button">
+                <i class="fas fa-search"></i>
+                Encontre o melhor lugar para você
+            </button>
+        </div>
+        <ul>
+            <li><a href="#nossa-regiao">Nossa Região</a></li>
+            <li><a href="#historico">Histórico</a></li>
+            <li><a href="#litoral">Litoral</a></li>
+            <li><a href="#lazer">Lazer</a></li>
+            <li><a href="#trilhas">Trilhas</a></li>
+            <li><a href="#restaurantes">Restaurantes</a></li>
+        </ul>
+        <!-- Botão de Login -->
+        <div class="login-button">
+            Login
+        </div>
     </nav>
 </header>
 </template>
 
 <style scoped>
 /* Estilo do header */
+
 .menu {
 display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 10px 20px;
+width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+background-color: #387251;
+z-index: 1000;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo da logo */
@@ -39,7 +48,9 @@ padding: 10px 20px;
 height: 50px; /* Altura da logo */
 width: auto; /* Manter a proporção */
 }
-
+.busca-section {
+margin-left: 50px;
+}
 /* Estilos restantes do menu */
 .menu ul {
 list-style: none;
@@ -61,7 +72,7 @@ transition: color 0.3s ease;
 .menu a:hover {
 color: #5de69a;
 }
-.highlight {
+.busca-button {
 position: relative;
 background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
 border-radius: 25px / 50%;
@@ -72,6 +83,11 @@ font-size: 14px;
 text-align: center;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+.busca-button:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 .login-button {
 background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
