@@ -1,12 +1,29 @@
 <template>
 <footer>
     <div class="left-info">
-    <p>Descubra mais sobre nossa região, selecione uma cidade abaixo:</p>
+    <h2>Explora Mata Sul</h2>
+    <p>MataSulPE, um lugar para todos! Um destino único, histórico e acolhedor</p>
+    <p>MUNICÍPIOS ABRANGIDOS PELA MICRORREGIÃO</p>
     <div class="city-list">
-        <a href="#cidade1">Cidade 1</a>
-        <a href="#cidade2">Cidade 2</a>
-        <a href="#cidade3">Cidade 3</a>
-        <a href="#cidade4">Cidade 4</a>
+        <a href="#cidade1">Água Preta</a>
+        <a href="#cidade2">Amaraji</a>
+        <a href="#cidade3">Barreiros</a>
+        <a href="#cidade4">Belém de Maria</a>
+        <a href="#cidade4">Bonito</a>
+        <a href="#cidade1">Catende</a>
+        <a href="#cidade2">Cortês</a>
+        <a href="#cidade3">Gameleira</a>
+        <a href="#cidade4">Jaqueira</a>
+        <a href="#cidade1">Joaquim Nabuco</a>
+        <a href="#cidade2">Maraial</a>
+        <a href="#cidade3">Palmares</a>
+        <a href="#cidade4">Primavera</a>
+        <a href="#cidade1">Ribeirão</a>
+        <a href="#cidade2">Rio Formoso</a>
+        <a href="#cidade3">São Benedito do Sul</a>
+        <a href="#cidade4">São José da Coroa Grande</a>
+        <a href="#cidade1">Tamandaré</a>
+        <a href="#cidade2">Xexéu</a>
     </div>
     </div>
     <div class="right-info">
@@ -26,7 +43,7 @@
 footer {
 display: flex;
 justify-content: space-between;
-align-items: center;
+align-items: flex-start;
 background-color: #336247;
 color: #FFFFFF;
 padding: 20px 40px;
@@ -36,19 +53,58 @@ width: 100%;
 left: 0;
 }
 footer .left-info {
+flex: 2;
+}
+footer .left-info h2, footer .left-info p:first-of-type {
+font-size: 24px;
+margin-bottom: 5px;
+text-align: center;
+}
+footer .left-info .subtitle,
+.city-list {
 text-align: left;
 }
-footer .right-info {
-text-align: right;
+footer .left-info .subtitle {
+margin-top: 10px;
+font-weight: bold;
+font-size: 14px;
+}
+footer .left-info p {
+margin: 5px 0;
+font-size: 16px;
+}
+.city-list {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 10px;
+margin-top: 10px;
 }
 .city-list a {
-display: inline-block;
-margin-right: 10px;
+color: #FFFFFF;
+text-decoration: none;
+transition: color 0.3s ease;
+text-align: left;
+}
+.city-list a:hover {
+color: #5de69a;
+}
+.right-info ul {
+list-style: none;
+padding: 0;
+margin: 0;
+text-align: right;
+}
+.right-info li {
+margin: 5px 0;
+}
+
+.right-info a {
 color: #FFFFFF;
 text-decoration: none;
 transition: color 0.3s ease;
 }
-.city-list a:hover {
+
+.right-info a:hover {
 color: #5de69a;
 }
 </style>
