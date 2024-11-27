@@ -36,6 +36,9 @@
         <li><a href="#restaurantes">Restaurantes</a></li>
     </ul>
     </div>
+    <div class="copyright">
+        © 2024 Explora Mata Sul. Todos os direitos reservados.
+    </div>
 </footer>
 </template>
 
@@ -88,11 +91,18 @@ text-align: left;
 .city-list a:hover {
 color: #5de69a;
 }
+.right-info {
+margin-top: 55px;
+align-self: flex-start;
+text-align: left;
+}
 .right-info ul {
 list-style: none;
 padding: 0;
 margin: 0;
 text-align: right;
+display: flex;
+flex-direction: column;
 }
 .right-info li {
 margin: 5px 0;
@@ -106,5 +116,15 @@ transition: color 0.3s ease;
 
 .right-info a:hover {
 color: #5de69a;
+}
+.copyright {
+text-align: center;
+font-size: 14px;
+color: #FFFFFF;
+margin-top: 10px;
+position: absolute;
+width: 100%;
+bottom: 0;
+left: 0;
 }
 </style>
