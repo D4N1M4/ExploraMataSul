@@ -4,58 +4,91 @@ import NavBar from '../components/NavBar.vue';
 </script>
 
 <template>
-<div>
+<div id="home">
 <NavBar />
 <main>
-<div class="search-area">
-    <div class="search-wrapper">
-    <input type="text" placeholder="Pesquisar por lugar ou cidade" />
-    <button>
-        <i class="fas fa-search"></i>
-    </button>
+<div class="area-visual">
+    <div class="pesquisa">
+        <input type="text" placeholder="Pesquise por cidade ou lugar." />
     </div>
-</div>
+    <div class="imagem-banner">
+        <img src="../assets/jardimBotanico.jpg" alt="Imagem da região" />
+        <div class="texto-banner">
+        <button class="botao-nossa-regiao">Nossa Região</button>
+        </div>
+    </div>
+    </div>
 </main>
 <Footer />
 </div>
 </template>
-
 <style scoped>
-.search-wrapper {
-position: relative;
-margin: 0 auto; /* Centraliza horizontalmente */
-width: 60%;
-margin-top: 50px;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+#home {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.search-wrapper input {
+main {
 width: 100%;
-padding: 10px 40px 10px 10px; /* Adiciona espaço para o botão */
-border: 1px solid rgba(109, 205, 186, 0.5); /* Borda sutil */
-border-radius: 20px;
-background-color: rgba(122, 248, 168, 0.3); /* Fundo verde translúcido */
-color: #2C3E50; /* Cor do texto */
-font-size: 14px;
 }
 
-.search-wrapper input::placeholder {
-color: #7F8C8D; /* Cor do placeholder */
+.area-visual {
+position: relative;
+text-align: center;
+color: #fff;
 }
 
-.search-wrapper button {
+/* Estilo da barra de pesquisa */
+.pesquisa {
 position: absolute;
-top: 50%;
-right: 10px; /* Ajusta a posição dentro do input */
-transform: translateY(-50%);
-background: none;
-border: none;
-color: #006168;
-cursor: pointer;
-font-size: 16px;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: 80%;
+max-width: 600px;
 }
 
-.search-wrapper button:hover {
-color: #2980B9;
+.pesquisa input {
+width: 100%;
+padding: 15px;
+font-size: 1rem;
+border: none;
+border-radius: 25px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.imagem-banner img {
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.texto-banner {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.botao-nossa-regiao {
+background-color: rgba(0, 0, 0, 0.6);
+color: #fff;
+border: none;
+border-radius: 20px;
+padding: 10px 20px;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.botao-nossa-regiao:hover {
+background-color: #fff;
+color: #000;
 }
 
 </style>
