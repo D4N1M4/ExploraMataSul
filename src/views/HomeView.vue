@@ -28,30 +28,51 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+padding-bottom: 60px;
+}
+
 #home {
 display: flex;
 flex-direction: column;
-align-items: center;
+width: 100%;
+flex: 1;
 }
 
 main {
 width: 100%;
+flex: 1;
 }
 
 .area-visual {
-position: relative;
-text-align: center;
+padding-top: 80px;
+padding-bottom: 60px;
 color: #fff;
+position: relative;
 }
-
-/* Estilo da barra de pesquisa */
+.banner input {
+width: 50%;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .pesquisa {
 position: absolute;
-top: 20px;
+top: 100px;
 left: 50%;
-transform: translateX(-50%);
+transform: translateX(-50%,);
 width: 80%;
 max-width: 600px;
+z-index: 10;
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: 25px;
+padding: 10px, 15px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
 }
 
 .pesquisa input {
@@ -66,6 +87,8 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 width: 100%;
 height: auto;
 object-fit: cover;
+position: relative;
+z-index: 1;
 }
 
 .texto-banner {
@@ -89,6 +112,17 @@ transition: all 0.3s ease;
 .botao-nossa-regiao:hover {
 background-color: #fff;
 color: #000;
+}
+
+main {
+flex: 1;
+}
+
+footer {
+background-color: #2d5238;
+color: white;
+text-align: center;
+padding: 20px;
 }
 
 </style>

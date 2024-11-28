@@ -50,7 +50,7 @@ align-items: flex-start;
 background-color: #336247;
 color: #FFFFFF;
 padding: 20px 40px;
-position: fixed;
+position: relative;;
 bottom: 0;
 width: 100%;
 left: 0;
