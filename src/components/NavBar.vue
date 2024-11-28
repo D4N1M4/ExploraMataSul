@@ -19,9 +19,9 @@
             <li><a href="#restaurantes">Restaurantes</a></li>
         </ul>
         <!-- Botão de Login -->
-        <div class="login-button">
+        <router-link to="/login" class="login-button">
             Login
-        </div>
+        </router-link>
     </nav>
 </header>
 </template>
@@ -48,15 +48,13 @@ z-index: 1000;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo da logo */
 .logo img {
-height: 50px; /* Altura da logo */
-width: auto; /* Manter a proporção */
+height: 50px;
+width: auto;
 }
 .busca-section {
 margin-left: 50px;
 }
-/* Estilos restantes do menu */
 .menu ul {
 list-style: none;
 display: flex;

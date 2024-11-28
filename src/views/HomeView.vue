@@ -60,7 +60,7 @@ import NavBar from '../components/NavBar.vue';
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="../assets/casaDaCulturaPalmares.jpeg" alt="Fundação Casa Da Cultura Hermilo Borba Filho" class="imagem-secao"/>
+            <img src="../assets/casaDaCulturaPalmares.jpg" alt="Fundação Casa Da Cultura Hermilo Borba Filho" class="imagem-secao"/>
         </div>
         <div class="bloco">
             <div class="texto-lado">
