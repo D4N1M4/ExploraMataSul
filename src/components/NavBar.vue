@@ -27,7 +27,11 @@
 </template>
 
 <style scoped>
-/* Estilo do header */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
 .menu {
 display: flex;
@@ -42,7 +46,6 @@ left: 0;
 background-color: #387251;
 z-index: 1000;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-overflow: hidden;
 }
 
 /* Estilo da logo */
@@ -107,5 +110,23 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 .login-button:hover {
 transform: scale(1.05);
 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+.menu {
+flex-wrap: wrap;
+justify-content: center;
+padding: 10px;
+}
+.menu ul {
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+.busca-section {
+order: 1;
+}
+.login-button {
+margin-top: 10px;
+}
 }
 </style>
