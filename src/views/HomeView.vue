@@ -18,6 +18,43 @@ import NavBar from '../components/NavBar.vue';
         </div>
     </div>
     </div>
+    <section class="informacoes">
+    <div class="conteudo">
+    <p>
+        Considerando a divisão adotada pelo Instituto de Planejamento do Estado de Pernambuco (Condepe), o Programa de Apoio ao Desenvolvimento Sustentável da Zona da Mata de Pernambuco (Promata) subdivide a Zona da Mata em dez territórios de desenvolvimento, que contemplam os 43 municípios da mesorregião. Os territórios de desenvolvimento são ambientes onde se abrangem espaços comuns (município/comunidade), e existem potencialidades inter-relacionadas que possibilitam a implementação de ações políticas, econômicas, sociais e culturais de forma sistêmica e integrada, objetivando o seu desenvolvimento sustentável. Nesta divisão também considerada pelo Promata, a Mata Sul Pernambucana é composta pelos territórios 05, 06, 07, 08 e 09 mostrados na Figura 2, onde um ou mais centros urbanos de influência determina a dinâmica em cada território.
+    </p>
+    <p>
+        Desse modo, o Promata tem atuado em todos os municípios da microrregião, embora a divisão do território da Secretaria de Desenvolvimento Territorial do Ministério do Desenvolvimento Agrário (MDA) contemple apenas 18 municípios da Zona da Mata Sul (Água Preta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Gameleira, Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Ribeirão, Rio Formoso, São Benedito do Sul, São José da Coroa Grande, Tamandaré e Xexéu), e um do Agreste (Bonito) (Figura 3).
+        <br/><a href="#">Saber Mais</a>
+    </p>
+    <img src="../assets/mapa.jpg" alt="Mapa da região" />
+    </div>
+
+    <div class="conteudo">
+    <img src="../assets/hotelFazenda.jpeg" alt="Explorar a Mata Sul" />
+    <h2>Explore a mata sul Pernambucana</h2>
+    <p>
+        Na Mata Sul Pernambucana, você vai encontrar diversos locais históricos, para se divertir e descansar com sua familia. Dentre eles, o Hotel fazenda que fica localizado na Cidade de Bonito.
+        <br />
+        <a href="#">Saber Mais</a>
+    </p>
+    </div>
+
+    <div class="conteudo">
+    <h2>Conheça nossa Cultura</h2>
+    <p>
+        Na Mata Sul Pernambucana é uma região rica em cultura e tradição. Suas festividades, como o Carnaval e as festas juninas, são vibrantes e cheias de música e dança, como maracatu, frevo e forró. A culinária local destaca-se com pratos como bolo de rolo e carne de sol, refletindo influências indígenas, africanas e portuguesas. A região também é conhecida por seu artesanato, incluindo produtos de barro e fibras vegetais, e seu patrimônio histórico, com cidades que guardam traços da colonização e do ciclo do açúcar. Essa diversidade cultural faz da Mata Sul um local de rica tapeçaria cultural e beleza natural.
+        <a href="#">Saber Mais</a>
+    </p>
+    <img src="../assets/casaDaCulturaPalmares" alt="Fundação Casa Da Cultura Hermilo Borba Filho " />
+    </div>
+
+    <div class="conteudo sugestao">
+    <h2>Conhece algum lugar e não encontrou ele aqui?</h2>
+    <p>Você pode nos indicar!</p>
+    <button class="botao-indicar">Indicar lugar</button>
+    </div>
+</section>
 </main>
 <Footer />
 </div>
@@ -116,6 +153,58 @@ color: #000;
 
 main {
 flex: 1;
+}
+.informacoes {
+background-color: #e7f6ec;
+padding: 40px 20px;
+}
+
+.informacoes .conteudo {
+margin-bottom: 40px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 20px;
+text-align: center;
+}
+
+.informacoes img {
+max-width: 100%;
+border-radius: 10px;
+object-fit: cover;
+}
+
+.informacoes h2 {
+font-family: 'Arial', sans-serif;
+color: #2d5238;
+font-size: 1.8rem;
+margin-bottom: 15px;
+}
+
+.informacoes p {
+font-family: 'Arial', sans-serif;
+font-size: 1rem;
+color: #333;
+}
+
+.sugestao {
+text-align: center;
+}
+
+.sugestao .botao-indicar {
+margin-top: 15px;
+padding: 10px 20px;
+font-size: 1rem;
+color: #fff;
+background-color: #2d5238;
+border: none;
+border-radius: 20px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.sugestao .botao-indicar:hover {
+background-color: #1a3523;
 }
 
 footer {
