@@ -205,73 +205,108 @@ text-align: justify;
 }
 
 .blocos-container {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+display: flex;
+flex-wrap: wrap;
 gap: 20px;
+justify-content: space-between;
+width: 100%;
+background-color: transparent;
 }
 
 .bloco {
 display: flex;
-align-items: center;
-margin-bottom: 30px;
-background: #fff;
-padding: 20px;
+flex-direction: row;
+width: 100%;
+height: auto;
+border: 1px solid #ddd;
 border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+background-color: transparent
 }
+
 .bloco:nth-child(even) {
 flex-direction: row-reverse;
 }
-.texto-lado {
-flex: 1;
-padding: 0 20px;
+
+.bloco img {
+width: 35%;
+object-fit: cover;
+height: 100%;
+margin: 10px;
+border-radius: 10px;
+object-fit: cover
 }
 
-.texto-lado h2 {
-color: #2d5238;
+.bloco .texto-lado {
+width: 60%;
+padding: 15px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.bloco .texto-lado h2 {
+font-size: 1.5rem;
 margin-bottom: 10px;
-}
-
-.texto-lado p {
-color: #333;
-line-height: 1.6;
-}
-
-.texto-lado a {
 color: #2d5238;
+}
+
+.bloco .texto-lado p {
+font-size: 1rem;
+line-height: 1.6;
+margin-bottom: 15px;
+color: #333;
+}
+
+.bloco .texto-lado a {
 font-weight: bold;
+color: #2c6e49;
 text-decoration: none;
 }
 
-.texto-lado a:hover {
+.bloco .texto-lado a:hover {
 text-decoration: underline;
 }
-
-.imagem-secao {
-width: 50%;
-max-width: 400%;
-border-radius: 10px;
-height: auto;
-}
 .botao-indicar {
-background-color: #2d5238;
-color: #fff;
-padding: 10px 15px;
-border-radius: 5px;
-margin-top: 15px;
+background: transparent;
+color: #2d5238;
+padding: 6px 12px;
+border: 2px solid #2d5238;
+border-radius: 15px;
+font-size: 0.9rem;
+font-weight: bold;
+text-transform: uppercase;
 cursor: pointer;
-display: flex;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-gap: 20px;
+transition: all 0.3s ease;
+width: fit-content;
 }
 
 .botao-indicar:hover {
-background-color: #1b3625;
+background: linear-gradient(135deg, #4CAF50, #2d5238);
+box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+transform: translateY(-2px);
 }
 footer {
 background-color: #2d5238;
 color: white;
 text-align: center;
 padding: 20px;
+}
+/*resposividade dos blocos*/
+@media (max-width: 768px) {
+.bloco {
+flex-direction: column;
+height: auto;
+}
+
+.bloco img {
+width: 100%;
+height: auto;
+}
+
+.bloco .texto-lado {
+width: 100%;
+}
 }
 </style>
