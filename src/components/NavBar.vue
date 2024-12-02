@@ -2,7 +2,9 @@
 <header>
     <nav class="menu">
         <div class="logo">
-            <img src="../assets/logosite.png" alt="Explora Mata Sul" />
+            <router-link to="/">
+                <img src="../assets/logosite.png" alt="Explora Mata Sul" />
+            </router-link>
         </div>
         <div class="busca-section">
             <button class="busca-button">
