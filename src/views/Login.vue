@@ -13,7 +13,7 @@
     <label for="password">Password:</label>
     <input id="password" v-model="password" type="password" required />
 
-    <button type="submit">Login</button>
+    <button type="submit" class="botao-login">Login</button>
     <router-link to="/register">Criar conta</router-link>
     </form>
 </div>
@@ -66,6 +66,7 @@ padding: 20px;
 width: 80%;
 max-width: 400px;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin: auto;
 }
 
 .logo img {
@@ -79,4 +80,22 @@ flex-direction: column;
 gap: 10px;
 width: 100%;
 }
+.botao-login {
+background-color: #5de69a;
+color: #ffffff;
+font-size: 16px;
+font-weight: bold;
+padding: 10px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.botao-login:hover {
+background-color: #4bbf80;
+transform: scale(1.05);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 </style>
