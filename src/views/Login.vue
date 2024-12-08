@@ -1,3 +1,8 @@
+<script setup>
+import Footer from '../components/Footer.vue';
+import NavBar from '../components/NavBar.vue';
+</script>
+
 <template>
 <div class="login">
     <NavBar />
@@ -14,34 +19,49 @@
     <input id="password" v-model="password" type="password" required />
 
     <button type="submit" class="botao-login">Login</button>
-    <router-link to="/register">Criar conta</router-link>
-    </form>
-</div>
-</div>
-<Footer />
+      </form>
+      <!-- Adiciona um link para a página de registro -->
+      <router-link to="/register" class="create-account-link">
+        Criar conta
+      </router-link>
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
-import NavBar from "@/components/NavBar.vue";
+import { auth } from "@/firebase"; // Importando o auth do Firebase
+import { signInWithEmailAndPassword } from "firebase/auth"; // Importando a função de login
 
 export default {
-components: {
-NavBar,
-Footer,
-},
-
-data() {
+  components: {
+    Footer,
+    NavBar,
+  },
+  data() {
     return {
-    username: '',
-    password: ''
+      username: '',
+      password: '',
+      errorMessage: '',
     };
-},
-methods: {
-    login() {
-    alert(`Usuário: ${this.username}`);
+  },
+  methods: {
+    async login() {
+      this.errorMessage = ""; // Limpa a mensagem de erro
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, this.username, this.password);
+        
+        // Armazena o e-mail do usuário no localStorage após login
+        localStorage.setItem('userEmail', userCredential.user.email);
+
+        // Redireciona para a página inicial após login bem-sucedido
+        this.$router.push({ name: 'home' });
+      } catch (error) {
+        this.errorMessage = "Credenciais inválidas. Tente novamente.";
+      }
     }
-}
+  }
 };
 </script>
 
@@ -98,4 +118,16 @@ transform: scale(1.05);
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.create-account-link {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.create-account-link:hover {
+  color: #0056b3;
+}
 </style>
