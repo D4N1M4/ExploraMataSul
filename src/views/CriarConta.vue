@@ -18,21 +18,53 @@
 </template>
 
 <script>
+import { auth, createUserWithEmailAndPassword } from "../firebase"; // Importe as funções corretamente
+
 export default {
-data() {
+  data() {
     return {
-    name: '',
-    email: '',
-    password: ''
+      email: "",
+      password: "",
+      confirmPassword: "",
+      errorMessage: "",
+      successMessage: "",
     };
-},
-methods: {
-    register() {
-    alert(`Usuário ${this.name} registrado com sucesso!`);
-    }
-}
+  },
+  methods: {
+    async createAccount() {
+      this.errorMessage = "";
+      this.successMessage = "";
+
+      // Verifica se as senhas coincidem
+      if (this.password !== this.confirmPassword) {
+        this.errorMessage = "As senhas não coincidem.";
+        return;
+      }
+
+      try {
+        // Usando a função modularizada para criar o usuário
+        const userCredential = await createUserWithEmailAndPassword(auth, this.email, this.password);
+        this.successMessage = `Conta criada com sucesso! Bem-vindo(a), ${userCredential.user.email}`;
+
+        // Limpa os campos de entrada
+        this.email = "";
+        this.password = "";
+        this.confirmPassword = "";
+
+        // Armazenar o e-mail do usuário no localStorage
+        localStorage.setItem('userEmail', userCredential.user.email);
+
+        // Redireciona para a página inicial
+        this.$router.push({ name: 'home' });
+      } catch (error) {
+        // Tratamento de erros do Firebase
+        if (error.code === 'auth/email-already-in-use') {
+          this.errorMessage = "Este e-mail já está em uso. Tente outro.";
+        } else {
+          this.errorMessage = error.message;
+        }
+      }
+    },
+  },
 };
 </script>
-
-<style scoped>
-</style>
