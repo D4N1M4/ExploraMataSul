@@ -1,10 +1,10 @@
 <script setup>
+import { auth } from "@/firebase"; // Configuração do Firebase
+import { signInWithEmailAndPassword, signOut } from "firebase/auth"; // Funções de login/logout
+import { ref } from "vue";
+import { useRouter } from "vue-router"; // Para navegação
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
-import { ref } from "vue";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth"; // Funções de login/logout
-import { auth } from "@/firebase"; // Configuração do Firebase
-import { useRouter } from "vue-router"; // Para navegação
 
 const router = useRouter();
 const username = ref("");
@@ -99,7 +99,8 @@ function logout() {
   width: 80%;
   max-width: 400px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: auto;
+  margin: 50px auto;
+  margin-top: 100px
 }
 
 .logo img {
