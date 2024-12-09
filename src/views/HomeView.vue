@@ -72,6 +72,7 @@ import NavBar from '../components/NavBar.vue';
             </div>
             <img src="../assets/tamandare.jpg" alt="Sugestão de local" class="imagem-secao"/>
         </div>
+
     </div>
 </section>
 </main>
