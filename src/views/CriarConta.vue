@@ -1,4 +1,5 @@
 <template>
+    
 <div class="register">
     <h1>Criar Conta</h1>
     <form @submit.prevent="register">
@@ -15,6 +16,7 @@
     <router-link to="/login">Já tenho uma conta</router-link>
     </form>
 </div>
+
 </template>
 
 <script>
