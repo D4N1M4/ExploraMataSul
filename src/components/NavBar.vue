@@ -8,27 +8,126 @@
         </div>
         <div class="busca-section">
             <button class="busca-button">
-                <i class="fas fa-search"></i>
-                Encontre o melhor lugar para você
+                <font-awesome-icon :icon="['fas', 'search']" />
+                 Encontre o melhor lugar para você
             </button>
         </div>
-        <ul>
-            <li><a href="#nossa-regiao">Nossa Região</a></li>
-            <li><a href="#historico">Histórico</a></li>
-            <li><a href="#litoral">Litoral</a></li>
-            <li><a href="#lazer">Lazer</a></li>
-            <li><a href="#trilhas">Trilhas</a></li>
-            <li><a href="#restaurantes">Restaurantes</a></li>
-        </ul>
-        <!-- Botão de Login -->
-        <router-link to="/login" class="login-button">
-            Login
-        </router-link>
+        <div class="links">
+          <ul>
+            <li><router-link to="/NossaRegiao">Nossa Região</router-link></li>
+            <li><router-link to="/Historico">Histórico</router-link></li>
+            <li><router-link to="/Lazer">Lazer</router-link></li>
+            <li><router-link to="/Restaurantes">Restaurantes</router-link></li>
+            <li><router-link to="/Trilhas">Trilhas</router-link></li>
+            <li><router-link to="/Litoral">Litoral</router-link></li>
+          </ul>
+        </div>
+        <div class="auth-section">
+            <!-- Se o usuário estiver logado, mostra o e-mail e os ícones -->
+            <div v-if="userEmail" class="user-info">
+                <span class="user-email">{{ userEmail }}</span>
+                <font-awesome-icon :icon="['fas', 'user']" />
+
+                <button class="logout-btn" @click="logout">
+                    <font-awesome-icon :icon="['fas', 'right-from-bracket']" />                
+                </button>
+
+            </div>
+
+            <!-- Se não estiver logado, exibe o botão de login -->
+            <router-link v-else to="/login" class="login-button">
+                Login
+            </router-link>
+        </div>
     </nav>
 </header>
 </template>
 
+<script>
+import { auth } from "@/firebase"; // Importando o auth do Firebase
+import { signOut } from "firebase/auth"; // Importando a função de logout
+
+export default {
+  data() {
+    return {
+      userEmail: localStorage.getItem("userEmail") || "", // Obtém o e-mail do usuário logado
+    };
+  },
+  watch: {
+    // Monitora alterações no localStorage e atualiza o email do usuário
+    "$route"(to, from) {
+      this.userEmail = localStorage.getItem("userEmail") || "";
+    },
+  },
+  methods: {
+    logout() {
+      signOut(auth)
+        .then(() => {
+          localStorage.removeItem("userEmail"); // Remove o e-mail do usuário
+          this.userEmail = ""; // Limpa o estado local
+          this.$router.push({ name: "login" }); // Redireciona para a página de login
+        })
+        .catch((error) => {
+          console.error("Erro ao sair: ", error.message);
+        });
+    },
+  },
+};
+</script>
+
 <style scoped>
+/* Estilos gerais da barra de navegação */
+.nav-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha ao canto direito */
+  align-items: center;
+  padding: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.logout-btn {
+  background-color: #ff4e4e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background-color: #ff1a1a;
+}
+
+/* Estilo do link de login */
+.login-link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  background-color: #5de69a;
+  border-radius: 5px;
+  color: white;
+}
 * {
 margin: 0;
 padding: 0;
@@ -82,7 +181,6 @@ position: relative;
 background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
 border-radius: 25px / 50%;
 padding: 10px 20px;
-color: #000000;
 font-weight: bold;
 font-size: 14px;
 text-align: center;
@@ -129,4 +227,25 @@ order: 1;
 margin-top: 10px;
 }
 }
+.links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links li {
+  margin: 10px 0;
+}
+
+.links a {
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #4CAF50;
+}
+
 </style>

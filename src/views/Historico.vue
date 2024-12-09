@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar.vue';
     <!-- Adicionando o NavBar e Footer -->
     <NavBar />
     
-    <h1>Nossa Região</h1>
+    <h1>Histórico</h1>
     
     <Footer />
   </div>
