@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import Login from "@/views/Login.vue";
+import ResetPassword from "@/views/ResetPassword.vue";
 import Register from "@/components/Register.vue"; // Certifique-se de que o componente Register exista
 import Historico from "@/views/Historico.vue";
 import Litoral from "@/views/Litoral.vue";
@@ -25,6 +26,11 @@ const routes = [
     path: "/Login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/reset-password", // Rota para recuperação de senha
+    name: "reset-password",
+    component: ResetPassword,
   },
   {
     path: "/Register",
