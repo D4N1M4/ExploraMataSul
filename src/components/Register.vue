@@ -1,6 +1,55 @@
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase'; // Importa o auth
+
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
+
+// Declaração das variáveis reativas
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+const errorMessage = ref('');
+const successMessage = ref('');
+const router = useRouter(); // Usado para navegação
+
+// Função para criar conta
+async function createAccount() {
+  errorMessage.value = '';
+  successMessage.value = '';
+
+  // Verifica se as senhas coincidem
+  if (password.value !== confirmPassword.value) {
+    errorMessage.value = 'As senhas não coincidem.';
+    return;
+  }
+
+  try {
+    // Usando a função modularizada para criar o usuário
+    const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+    successMessage.value = `Conta criada com sucesso! Bem-vindo(a), ${userCredential.user.email}`;
+
+    // Limpa os campos de entrada
+    email.value = '';
+    password.value = '';
+    confirmPassword.value = '';
+
+    // Redireciona para a página inicial
+    router.push({ name: 'home' });
+
+    // Armazenar o e-mail do usuário no localStorage
+    localStorage.setItem('userEmail', userCredential.user.email);
+  } catch (error) {
+    // Tratamento de erros do Firebase
+    if (error.code === 'auth/email-already-in-use') {
+      errorMessage.value = 'Este e-mail já está em uso. Tente outro.';
+    } else {
+      errorMessage.value = error.message;
+    }
+  }
+}
 </script>
 
 <template>
@@ -24,6 +73,7 @@ import NavBar from '../components/NavBar.vue';
         <button type="submit" class="botao-register">Criar Conta</button>
       </form>
       <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
+      <div v-if="successMessage" class="success">{{ successMessage }}</div>
       <router-link to="/login" class="login-link">
         Já tem uma conta? Faça login
       </router-link>
@@ -32,60 +82,8 @@ import NavBar from '../components/NavBar.vue';
   </div>
 </template>
 
-<script>
-import { auth, createUserWithEmailAndPassword } from "../firebase"; // Importe as funções corretamente
-
-export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-      confirmPassword: "",
-      errorMessage: "",
-      successMessage: "",
-    };
-  },
-  methods: {
-    async createAccount() {
-      this.errorMessage = "";
-      this.successMessage = "";
-
-      // Verifica se as senhas coincidem
-      if (this.password !== this.confirmPassword) {
-        this.errorMessage = "As senhas não coincidem.";
-        return;
-      }
-
-      try {
-        // Usando a função modularizada para criar o usuário
-        const userCredential = await createUserWithEmailAndPassword(auth, this.email, this.password);
-        this.successMessage = `Conta criada com sucesso! Bem-vindo(a), ${userCredential.user.email}`;
-
-        // Limpa os campos de entrada
-        this.email = "";
-        this.password = "";
-        this.confirmPassword = "";
-
-        // Redireciona para a página inicial
-        this.$router.push({ name: 'home' });
-
-        // Armazenar o e-mail do usuário no localStorage
-        localStorage.setItem('userEmail', userCredential.user.email);
-      } catch (error) {
-        // Tratamento de erros do Firebase
-        if (error.code === 'auth/email-already-in-use') {
-          this.errorMessage = "Este e-mail já está em uso. Tente outro.";
-        } else {
-          this.errorMessage = error.message;
-        }
-      }
-    },
-  },
-};
-</script>
-
 <style scoped>
-/* Adicione seu estilo aqui */
+/* Estilos mantidos, podem ser ajustados conforme necessário */
 .register {
   display: flex;
   flex-direction: column;
@@ -154,6 +152,11 @@ export default {
 
 .error {
   color: red;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
   margin-top: 10px;
 }
 </style>

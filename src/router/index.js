@@ -1,6 +1,15 @@
+<<<<<<< Updated upstream
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import Login from "@/views/Login.vue";
+=======
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "@/views/HomeView.vue";
+import Login from "@/views/Login.vue";
+import ResetPassword from "@/views/ResetPassword.vue";
+>>>>>>> Stashed changes
 import Register from "@/components/Register.vue"; // Certifique-se de que o componente Register exista
 import Historico from "@/views/Historico.vue";
 import Litoral from "@/views/Litoral.vue";
@@ -27,11 +36,23 @@ const routes = [
     component: Login,
   },
   {
+<<<<<<< Updated upstream
+=======
+    path: "/reset-password", // Rota para recuperação de senha
+    name: "reset-password",
+    component: ResetPassword,
+  },
+  {
+>>>>>>> Stashed changes
     path: "/Register",
     name: "Register",
     component: Register,
   },
 ];
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
