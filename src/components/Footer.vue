@@ -32,7 +32,7 @@
             <li><router-link to="/Historico">Histórico</router-link></li>
             <li><router-link to="/Lazer">Lazer</router-link></li>
             <li><router-link to="/Restaurantes">Restaurantes</router-link></li>
-            <li><router-link to="/RoteirosNaturais">RoteirosNaturais</router-link></li>
+            <li><router-link to="/RoteirosNaturais">Roteiros Naturais</router-link></li>
             <li><router-link to="/Litoral">Litoral</router-link></li>
           </ul>
     </div>

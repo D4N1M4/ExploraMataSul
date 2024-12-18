@@ -8,7 +8,7 @@ import ResetPassword from "@/views/ResetPassword.vue";
 import Restaurantes from "@/views/Restaurantes.vue";
 import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
 import { createRouter, createWebHistory } from "vue-router";
- 
+
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
   { path: "/Lazer", name:"Lazer", component: Lazer },
