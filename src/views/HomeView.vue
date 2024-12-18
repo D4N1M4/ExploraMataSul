@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar.vue';
     <div class="imagem-banner">
         <img src="../assets/jardimBotanico.jpg" alt="Imagem da região" />
         <div class="texto-banner">
-        <button class="botao-nossa-regiao">Nossa Região</button>
+        <div class="nossa-regiao">Nossa Região</div>
         </div>
     </div>
     </div>
@@ -25,7 +25,6 @@ import NavBar from '../components/NavBar.vue';
         </p>
         <p>
             Desse modo, o Promata tem atuado em todos os municípios da microrregião, embora a divisão do território da Secretaria de Desenvolvimento Territorial do Ministério do Desenvolvimento Agrário (MDA) contemple apenas 18 municípios da Zona da Mata Sul (Água Preta, Amaraji, Barreiros, Belém de Maria, Catende, Cortês, Gameleira, Jaqueira, Joaquim Nabuco, Maraial, Palmares, Primavera, Ribeirão, Rio Formoso, São Benedito do Sul, São José da Coroa Grande, Tamandaré e Xexéu), e um do Agreste (Bonito) (Figura 3).
-            <br/><a href="#">Saber Mais</a>
         </p>
     </div>
     <div class="blocos-container">
@@ -35,7 +34,6 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                         Na Mata Sul Pernambucana, você vai encontrar diversos locais históricos e culturais. Esses espaços são conhecidos por sua história e belezas naturais.
                         <br />
-                            <a href="#">Saber Mais</a>
                     </p>
             </div>
             <img src="../assets/mapa.jpg" alt="Mapa da região" class="imagem-secao" />
@@ -72,13 +70,13 @@ import NavBar from '../components/NavBar.vue';
             </div>
             <img src="../assets/tamandare.jpg" alt="Sugestão de local" class="imagem-secao"/>
         </div>
-
     </div>
 </section>
 </main>
 </div>
 <Footer />
 </template>
+
 <style scoped>
 * {
 margin: 0;
@@ -86,10 +84,6 @@ padding: 0;
 box-sizing: border-box;
 }
 body {
-/*display: flex;
-flex-direction: column;
-min-height: 100vh;
-padding-bottom: 60px;*/
 font-family: Arial, sans-serif;
 }
 
@@ -119,26 +113,55 @@ border-radius: 5px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .pesquisa {
-position: absolute;
-top: 100px;
-left: 50%;
-transform: translateX(-50%,);
-width: 80%;
-max-width: 600px;
-z-index: 10;
-background-color: rgba(255, 255, 255, 0.8);
-border-radius: 25px;
-padding: 10px, 15px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Define largura inicial responsiva */
+  max-width: 600px;
+  z-index: 10;
+  background-color: rgba(182, 252, 222, 0.8);
+  border-radius: 25px;
+  padding: 2px; /* Corrigido para valores uniformes */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .pesquisa input {
-width: 100%;
-padding: 15px;
-font-size: 1rem;
-border: none;
-border-radius: 25px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Ocupa toda a largura do contêiner */
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .pesquisa {
+    top: 80px; /* Ajusta a posição vertical */
+    width: 90%; /* Reduz a largura */
+    max-width: none; /* Remove limite máximo de largura */
+    padding: 10px; /* Reduz padding para caber melhor */
+  }
+
+  .pesquisa input {
+    padding: 12px; /* Reduz padding interno */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+  }
+}
+
+/* Ajustes adicionais para telas muito pequenas */
+@media (max-width: 480px) {
+  .pesquisa {
+    top: 60px; /* Reduz ainda mais o espaço no topo */
+    width: 95%; /* Largura quase total */
+    border-radius: 15px; /* Reduz o raio do border */
+  }
+
+  .pesquisa input {
+    padding: 10px;
+    font-size: 0.85rem; /* Tamanho da fonte menor */
+  }
 }
 .imagem-banner img {
 width: 100%;
@@ -155,20 +178,18 @@ left: 50%;
 transform: translateX(-50%);
 }
 
-.botao-nossa-regiao {
-background-color: rgba(0, 0, 0, 0.6);
-color: #fff;
-border: none;
-border-radius: 20px;
+.nossa-regiao {
+background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
+color: #000000;
 padding: 10px 20px;
-font-size: 1rem;
+border: none;
+font-weight: bold;
+font-size: 14px;
+border-radius: 8px / 50%;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+text-align: right;
 cursor: pointer;
-transition: all 0.3s ease;
-}
-
-.botao-nossa-regiao:hover {
-background-color: #fff;
-color: #000;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .informacoes {
@@ -261,13 +282,23 @@ color: #333;
 }
 
 .bloco .texto-lado a {
+background: transparent;
+color: #2d5238;
+padding: 6px 12px;
+border: 2px solid #2d5238;
+border-radius: 30px;
+font-size: 0.6rem;
 font-weight: bold;
-color: #2c6e49;
-text-decoration: none;
+text-transform: uppercase;
+cursor: pointer;
+transition: all 0.3s ease;
+width: fit-content;
 }
 
 .bloco .texto-lado a:hover {
-text-decoration: underline;
+background: linear-gradient(135deg, #4CAF50, #2d5238);
+box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+transform: translateY(-2px);
 }
 .botao-indicar {
 background: transparent;

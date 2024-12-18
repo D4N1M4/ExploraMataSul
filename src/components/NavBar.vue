@@ -6,11 +6,8 @@
                 <img src="../assets/logosite.png" alt="Explora Mata Sul" />
             </router-link>
         </div>
-        <div class="busca-section">
-            <button class="busca-button">
-                <font-awesome-icon :icon="['fas', 'search']" />
-                 Encontre o melhor lugar para você
-            </button>
+        <div class="section">
+              <p>Encontre o melhor lugar para você</p>
         </div>
         <div class="links">
           <ul>
@@ -192,6 +189,19 @@ cursor: pointer;
 transform: scale(1.05);
 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+.section {
+background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
+color: #000000;
+padding: 10px 20px;
+border: none;
+font-weight: bold;
+font-size: 14px;
+border-radius: 25px / 50%;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+text-align: right;
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .login-button {
 background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
 color: #FFFFFF;
@@ -220,7 +230,7 @@ flex-direction: column;
 align-items: center;
 gap: 10px;
 }
-.busca-section {
+.section {
 order: 1;
 }
 .login-button {
