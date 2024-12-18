@@ -8,7 +8,6 @@ import Litoral from "@/views/Litoral.vue";
 import Restaurantes from "@/views/Restaurantes.vue";
 import Trilhas from "@/views/Trilhas.vue";
 import Lazer from "@/views/Lazer.vue";
-import NossaRegiao from "@/views/NossaRegiao.vue";
  
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -16,9 +15,9 @@ const routes = [
   { path: "/Restaurantes", name:"Restaurantes", component: Restaurantes },
   { path: "/Trilhas", name:"Trilhas", component: Trilhas },
   { path: "/Litoral", name:"Litoral", component: Litoral },
-  { path: "/NossaRegiao", name:"NossaRegiao", component: NossaRegiao },
+  { path: "/NossaRegiao", name:"NossaRegiao", component: HomeView },
   {
-    path: "/",
+    path: "/", 
     name: "home",
     component: HomeView,
   },
