@@ -26,7 +26,7 @@ import NavBar from '../components/NavBar.vue';
             <div class="texto-lado">
                 <h2>Cachoeira de Serra Azul</h2>
                     <p>
-                      Localizado no distrito de Palmares, local é muito frequentado por moradores que buscam se refrescar no tempo quente, local é muito conhecido por fazer parte da antiga Usina Falida de Serra Azul.            
+                      Localizado no distrito de Palmares, local é muito frequentado por moradores que buscam se refrescar no tempo quente, é conhecido por fazer parte da antiga Usina desativada de Serra Azul.            
                     <br />
                     <a href="#">Saber Mais</a>
                     </p>
@@ -48,7 +48,7 @@ import NavBar from '../components/NavBar.vue';
             <div class="texto-lado">
                 <h2>Orla de Palmares</h2>
                     <p>
-                      Orla localizada a beira do rio Una na cidade de Palmares, é um local de lazer, onde oferece brinquedos publicos, maquinas de praicar exercício e locais para lachar, com uma ciclovia e uma área para caminhada de pedestres.                         
+                      Orla localizada a beira do rio Una na cidade de Palmares, é um local de lazer, onde oferece brinquedos publicos, máquinas de praticar exercício e locais para alimmentação, com uma ciclovia e uma área para caminhada de pedestres.                         
                         <br />
                         <a href="#">Saber Mais</a>
                     </p>
