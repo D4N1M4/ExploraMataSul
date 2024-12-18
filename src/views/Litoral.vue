@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar.vue';
     <div class="imagem-banner">
         <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Litoral-20241218T011313Z-001/Litoral/Praia%20Porto%20de%20Nassau%20-%20Barreiros/porto-foto-01-1536x1024-1.png?raw=true" alt="Praia Porto de Nassau - Barreiros/Pe" />
         <div class="texto-banner">
-        <div class="litoral">litoral</div>
+        <div class="litoral">Litoral</div>
         </div>
     </div>
     </div>
@@ -159,7 +159,7 @@ left: 50%;
 transform: translateX(-50%);
 }
 
-.lazer {
+.litoral {
 background: linear-gradient(135deg, rgb(109, 205, 186), rgba(44, 136, 83, 0.3));
 color: #000000;
 padding: 10px 20px;
