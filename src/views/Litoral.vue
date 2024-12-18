@@ -231,7 +231,6 @@ background-color: transparent
 .bloco:nth-child(even) {
 flex-direction: row-reverse;
 }
-
 .bloco img {
 width: 35%;
 object-fit: cover;
