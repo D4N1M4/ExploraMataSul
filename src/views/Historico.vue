@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar.vue';
         <input type="text" placeholder="Pesquise por cidade ou lugar." />
     </div>
     <div class="imagem-banner">
-        <img src="@\assets\imagens\Históricos-20241218T011238Z-001\Históricos\Igreja Matriz de São Miguel Arcanjo- Barreiros\5451660043_8d75034a4c.jpg" alt="Matriz de São Miguel Arcanjo" />
+        <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Igreja%20Matriz%20de%20S%C3%A3o%20Miguel%20Arcanjo-%20Barreiros/462586071_2946239275543677_3059116117920897614_n.jpg?raw=true" alt="Matriz de São Miguel Arcanjo" />
         <div class="texto-banner">
         <div class="historico">Pontos Históricos</div>
         </div>
@@ -26,14 +26,12 @@ import NavBar from '../components/NavBar.vue';
             <div class="texto-lado">
                 <h2>Museu do Una</h2>
                     <p>
-                      Localizado no distrito de Várzea do Una, foi fundado em 22 de abril de
- 2000 por Bertrando Bernardino, com o objetivo de servir de abrigo e
- preservação da cultura regional e meio ambiente.                        
+                      Localizado no distrito de Várzea do Una, foi fundado em 22 de abril de 2000 por Bertrando Bernardino, com o objetivo de servir de abrigo e preservação da cultura regional e meio ambiente.
                     <br />
                     <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="@\assets\imagens\Históricos-20241218T011238Z-001\Históricos\Museu do Una - São José da Coroa Grande\museu-do-una (1).jpg" alt="Museu do Una" class="imagem-secao" />
+            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Museu%20do%20Una%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/museu-do-una%20(1).jpg?raw=true" class="imagem-secao" />
         </div>
         <div class="bloco">
             <div class="texto-lado">
@@ -45,22 +43,18 @@ import NavBar from '../components/NavBar.vue';
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="@\assets\imagens\Históricos-20241218T011238Z-001\Históricos\Engenho Morim - São José da Coroa Grande\WhatsApp-Image-2021-08-05-at-12.00.39.jpeg" alt="Engenho Morim" class="imagem-secao" />
+            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Engenho%20Morim%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/WhatsApp-Image-2021-08-05-at-12.00.39.jpeg?raw=true" alt="Engenho Morim" class="imagem-secao" />
         </div>
         <div class="bloco">
             <div class="texto-lado">
                 <h2>Cine Teatro Apolo</h2>
                     <p>
-                      O Cine-Teatro Apollo foi inaugurado em 1914, construído com o
- propósito de atender às atividades culturais, que na época eram
- desenvolvidas e ganhavam espaço na sociedade local, vindo a
- representar para a região um bem cultural que poucas cidades do
- interior possuíam.                         
+                      O Cine-Teatro Apollo foi inaugurado em 1914, construído com o propósito de atender às atividades culturais, que na época eram desenvolvidas e ganhavam espaço na sociedade local, vindo a representar para a região um bem cultural que poucas cidades do interior possuíam.
                         <br />
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="@\assets\imagens\Históricos-20241218T011238Z-001\Históricos\Cine Teatro Apolo - Palmares\fachada_cine_teatro.webp" alt="Cine Teatro Apolo" class="imagem-secao"/>
+            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Cine%20Teatro%20Apolo%20-%20Palmares/fachada_cine_teatro.webp" alt="Cine Teatro Apolo" class="imagem-secao"/>
         </div>
     </div>
 </section>

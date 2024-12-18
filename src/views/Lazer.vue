@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar.vue';
         <input type="text" placeholder="Pesquise por cidade ou lugar." />
     </div>
     <div class="imagem-banner">
-        <img src="@\assets\imagens\Lazer-20241218T011618Z-001\Lazer\Banho Mina da Pedra - Ribeirão\306265939_457749389719467_4938644550721951193_n.jpg" alt="Mina da Pedra" />
+        <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Banho%20Mina%20da%20Pedra%20-%20Ribeir%C3%A3o/306265939_457749389719467_4938644550721951193_n.jpg?raw=true" alt="Mina da Pedra" />
         <div class="texto-banner">
         <div class="lazer">Lazer</div>
         </div>
@@ -31,7 +31,7 @@ import NavBar from '../components/NavBar.vue';
                     <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="@\assets\imagens\Lazer-20241218T011618Z-001\Lazer\Cachoeira de Cerra Azul - Palmares\2024-01-23 (1).jpg" alt="Cachoeira de Serra Azul" class="imagem-secao" />
+            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Cachoeira%20de%20Cerra%20Azul%20-%20Palmares/2024-04-29.jpg?raw=true" alt="Cachoeira de Serra Azul" class="imagem-secao" />
         </div>
         <div class="bloco">
             <div class="texto-lado">
@@ -42,7 +42,7 @@ import NavBar from '../components/NavBar.vue';
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="@\assets\imagens\Lazer-20241218T011618Z-001\Lazer\Minas ecopark - Ribeirão\maxresdefault (2).jpg" alt="Minas EcoPark" class="imagem-secao" />
+            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Minas%20ecopark%20-%20Ribeir%C3%A3o/73295854_113822193376789_5095507916748750848_n.jpg?raw=true" alt="Minas EcoPark" class="imagem-secao" />
         </div>
         <div class="bloco">
             <div class="texto-lado">
@@ -53,7 +53,7 @@ import NavBar from '../components/NavBar.vue';
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="@\assets\imagens\Lazer-20241218T011618Z-001\Lazer\Orla de Palmares\maxresdefault.jpg" alt="Orla de Palmares" class="imagem-secao"/>
+            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Orla%20de%20Palmares/maxresdefault.jpg?raw=true" alt="Orla de Palmares" class="imagem-secao"/>
         </div>
     </div>
 </section>
