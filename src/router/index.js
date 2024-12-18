@@ -1,19 +1,19 @@
-import { createRouter, createWebHistory } from "vue-router";
+import Register from "@/components/Register.vue";
+import Historico from "@/views/Historico.vue";
 import HomeView from "@/views/HomeView.vue";
+import Lazer from "@/views/Lazer.vue";
+import Litoral from "@/views/Litoral.vue";
 import Login from "@/views/Login.vue";
 import ResetPassword from "@/views/ResetPassword.vue";
-import Register from "@/components/Register.vue"; // Certifique-se de que o componente Register exista
-import Historico from "@/views/Historico.vue";
-import Litoral from "@/views/Litoral.vue";
 import Restaurantes from "@/views/Restaurantes.vue";
-import Trilhas from "@/views/Trilhas.vue";
-import Lazer from "@/views/Lazer.vue";
+import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
+import { createRouter, createWebHistory } from "vue-router";
  
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
   { path: "/Lazer", name:"Lazer", component: Lazer },
   { path: "/Restaurantes", name:"Restaurantes", component: Restaurantes },
-  { path: "/Trilhas", name:"Trilhas", component: Trilhas },
+  { path: "/RoteirosNaturais", name:"RoteirosNaturais", component: RoteirosNaturais },
   { path: "/Litoral", name:"Litoral", component: Litoral },
   { path: "/NossaRegiao", name:"NossaRegiao", component: HomeView },
   {
