@@ -5,7 +5,6 @@ import NavBar from '../components/NavBar.vue';
 
 <template>
   <div>
-    <!-- Adicionando o NavBar e Footer -->
     <NavBar />
     
     <h1>Restaurantes</h1>
@@ -15,5 +14,4 @@ import NavBar from '../components/NavBar.vue';
 </template>
 
 <style scoped>
-/* Estilos opcionais */
 </style>

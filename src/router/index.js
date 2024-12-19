@@ -4,6 +4,7 @@ import HomeView from "@/views/HomeView.vue";
 import Lazer from "@/views/Lazer.vue";
 import Litoral from "@/views/Litoral.vue";
 import Login from "@/views/Login.vue";
+import PraiaDeSaoJoseDaCoroaGrande from "@/views/PraiaDeSaoJoseDaCoroagrande.vue";
 import ResetPassword from "@/views/ResetPassword.vue";
 import Restaurantes from "@/views/Restaurantes.vue";
 import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
@@ -16,6 +17,7 @@ const routes = [
   { path: "/RoteirosNaturais", name:"RoteirosNaturais", component: RoteirosNaturais },
   { path: "/Litoral", name:"Litoral", component: Litoral },
   { path: "/NossaRegiao", name:"NossaRegiao", component: HomeView },
+  { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande", name:"PraiaDeSaoJoseDaCoroaGrande", component: PraiaDeSaoJoseDaCoroaGrande },
   {
     path: "/", 
     name: "home",
@@ -35,6 +37,11 @@ const routes = [
     path: "/Register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande",
+    name: "PraiaDeSaoJoseDaCoroaGrande",
+    component: PraiaDeSaoJoseDaCoroaGrande,
   },
 ];
 

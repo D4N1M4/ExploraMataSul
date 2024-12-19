@@ -48,7 +48,7 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
                         <br />
-                        <a href="#">Saber Mais</a>
+                        <router-link to="/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande">Saber Mais</router-link>
                     </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Litoral-20241218T011313Z-001/Litoral/Praia%20da%20Coroa%20Grande%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/maxresdefault%20(4).jpg?raw=true" alt="Praia de São José da cora Grande " class="imagem-secao"/>
