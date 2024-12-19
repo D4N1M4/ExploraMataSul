@@ -24,8 +24,13 @@ recentReviews() {
 },
 },
 methods: {
-goToReviewPage() {
-    this.$router.push({ name: "AddReviewPage" });
+handleReviewButton() {
+const isLoggedIn = localStorage.getItem("userEmail");
+if (isLoggedIn) {
+    this.$router.push({ name: "Avaliacao" });
+} else {
+    this.$router.push({ name: "Login", query: { redirect: '/Login' } });
+}
 },
 },
 };
@@ -70,7 +75,7 @@ goToReviewPage() {
         <span v-for="n in review.rating" :key="n">⭐</span>
     </div>
     </div>
-    <button @click="goToReviewPage">Deixe sua avaliação</button>
+    <button @click="handleReviewButton">Deixe sua avaliação</button>
 </section>
 
 <Footer />

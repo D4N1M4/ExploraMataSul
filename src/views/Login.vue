@@ -1,10 +1,10 @@
 <script setup>
-import { auth, provider } from '../firebase.js'; // Importa o auth e provider do Google
-import { signInWithEmailAndPassword, signInWithPopup, sendPasswordResetEmail, signOut } from 'firebase/auth'; // Funções de login e recuperação de senha
+import { sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'; // Funções de login e recuperação de senha
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'; // Para navegação
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
+import { auth, provider } from '../firebase.js'; // Importa o auth e provider do Google
 
 const router = useRouter();
 const username = ref('');
@@ -26,7 +26,8 @@ function login() {
       const user = userCredential.user;
       console.log('Usuário logado:', user.email);
       localStorage.setItem('userEmail', user.email); // Salva no localStorage
-      router.push('/'); // Redireciona para a página inicial
+      const redirectTo = router.currentRoute.value.query.redirect || '/';
+      router.push(redirectTo);
     })
     .catch((error) => {
       console.error('Erro ao fazer login:', error);

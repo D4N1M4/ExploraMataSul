@@ -1,4 +1,5 @@
 import Register from "@/components/Register.vue";
+import Avaliacao from "@/views/Avaliacao.vue";
 import Historico from "@/views/Historico.vue";
 import HomeView from "@/views/HomeView.vue";
 import Lazer from "@/views/Lazer.vue";
@@ -18,6 +19,7 @@ const routes = [
   { path: "/Litoral", name:"Litoral", component: Litoral },
   { path: "/NossaRegiao", name:"NossaRegiao", component: HomeView },
   { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande", name:"PraiaDeSaoJoseDaCoroaGrande", component: PraiaDeSaoJoseDaCoroaGrande },
+  { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande/Avaliacao", name:"Avaliacao", component: Avaliacao },
   {
     path: "/", 
     name: "home",
@@ -42,6 +44,11 @@ const routes = [
     path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande",
     name: "PraiaDeSaoJoseDaCoroaGrande",
     component: PraiaDeSaoJoseDaCoroaGrande,
+  },
+  {
+    path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande/Avaliacao",
+    name: "Avaliacao",
+    component: Avaliacao,
   },
 ];
 
