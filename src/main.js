@@ -2,9 +2,8 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-// Importa o CSS do Font Awesome e seu próprio CSS
-import '@fortawesome/fontawesome-free/css/all.css';
-import './assets/main.css';
+// Importação do CSS do Font Awesome
+import './assets/main.css'; // Certifique-se de que você tem o seu próprio CSS aqui
 
 // Configurações do Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -14,10 +13,10 @@ import { faSearch, faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icon
 // Adiciona os ícones à biblioteca
 library.add(faSearch, faSignOutAlt, faUser);
 
-// Cria a aplicação Vue
+// Criação da aplicação Vue
 const app = createApp(App);
 
-// Registra o componente global do Font Awesome
+// Registro do componente Font Awesome globalmente
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 // Usa o router

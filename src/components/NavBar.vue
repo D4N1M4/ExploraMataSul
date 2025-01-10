@@ -1,44 +1,47 @@
 <template>
-<header>
-    <nav class="menu">
-        <div class="logo">
-            <router-link to="/">
-                <img src="../assets/logosite.png" alt="Explora Mata Sul" />
-            </router-link>
-        </div>
-        <div class="section">
-              <p>Encontre o melhor lugar para você</p>
-        </div>
-        <div class="links">
-          <ul>
-            <li><router-link to="/NossaRegiao">Nossa Região</router-link></li>
-            <li><router-link to="/Historico">Histórico</router-link></li>
-            <li><router-link to="/Lazer">Lazer</router-link></li>
-            <li><router-link to="/Restaurantes">Restaurantes</router-link></li>
-            <li><router-link to="/RoteirosNaturais">Roteiros Naturais</router-link></li>
-            <li><router-link to="/Litoral">Litoral</router-link></li>
-          </ul>
-        </div>
-        <div class="auth-section">
-            <!-- Se o usuário estiver logado, mostra o e-mail e os ícones -->
-            <div v-if="userEmail" class="user-info">
-                <span class="user-email">{{ userEmail }}</span>
-                <font-awesome-icon :icon="['fas', 'user']" />
-
-                <button class="logout-btn" @click="logout">
-                    <font-awesome-icon :icon="['fas', 'right-from-bracket']" />                
-                </button>
-
-            </div>
-
-            <!-- Se não estiver logado, exibe o botão de login -->
-            <router-link v-else to="/login" class="login-button">
-                Login
-            </router-link>
-        </div>
-    </nav>
-</header>
-</template>
+  <header>
+      <nav class="menu">
+          <div class="logo">
+              <router-link to="/">
+                  <img src="../assets/logosite.png" alt="Explora Mata Sul" />
+              </router-link>
+          </div>
+          <div class="section">
+                <p>Encontre o melhor lugar para você</p>
+          </div>
+          <div class="links">
+            <ul>
+              <li><router-link to="/NossaRegiao">Nossa Região</router-link></li>
+              <li><router-link to="/Historico">Histórico</router-link></li>
+              <li><router-link to="/Lazer">Lazer</router-link></li>
+              <li><router-link to="/Restaurantes">Restaurantes</router-link></li>
+              <li><router-link to="/RoteirosNaturais">Roteiros Naturais</router-link></li>
+              <li><router-link to="/Litoral">Litoral</router-link></li>
+            </ul>
+          </div>
+          <div class="auth-section">
+              <!-- Se o usuário estiver logado, mostra o e-mail e os ícones -->
+              <div v-if="userEmail" class="user-info">
+                  <span class="user-email">{{ userEmail }}</span>
+                  <router-link to="/Perfil"> <!-- Link para a página de perfil -->
+                      <font-awesome-icon :icon="['fas', 'user']" />
+                  </router-link>
+  
+                  <button class="logout-btn" @click="logout">
+                      <font-awesome-icon :icon="['fas', 'right-from-bracket']" />                
+                  </button>
+  
+              </div>
+  
+              <!-- Se não estiver logado, exibe o botão de login -->
+              <router-link v-else to="/login" class="login-button">
+                  Login
+              </router-link>
+          </div>
+      </nav>
+  </header>
+  </template>
+  
 
 <script>
 import { auth } from "@/firebase"; // Importando o auth do Firebase

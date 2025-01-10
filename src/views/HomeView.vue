@@ -44,7 +44,7 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                         Na Mata Sul Pernambucana, você encontrará lugares incríveis para relaxar, como o Hotel Fazenda em Bonito. É um destino perfeito para descansar e aproveitar momentos únicos em família.
                         <br />
-                        <a href="#">Saber Mais</a>
+                        <router-link to="/HotelFazenda">Saiba mais</router-link>
                     </p>
             </div>
             <img src="../assets/hotelFazenda.jpeg" alt="Explorar a Mata Sul" class="imagem-secao" />

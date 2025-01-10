@@ -9,6 +9,8 @@ import PraiaDeSaoJoseDaCoroaGrande from "@/views/PraiaDeSaoJoseDaCoroagrande.vue
 import ResetPassword from "@/views/ResetPassword.vue";
 import Restaurantes from "@/views/Restaurantes.vue";
 import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
+import HotelFazenda from "@/views/HotelFazenda.vue";
+import Perfil from '@/views/Perfil.vue'; 
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -20,6 +22,14 @@ const routes = [
   { path: "/NossaRegiao", name:"NossaRegiao", component: HomeView },
   { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande", name:"PraiaDeSaoJoseDaCoroaGrande", component: PraiaDeSaoJoseDaCoroaGrande },
   { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande/Avaliacao", name:"Avaliacao", component: Avaliacao },
+  { path: "/HotelFazenda", name:"HotelFazenda", component: HotelFazenda },
+
+  {
+    path: '/Perfil',
+    name: 'Perfil',
+    component: Perfil,
+  },
+
   {
     path: "/", 
     name: "home",
