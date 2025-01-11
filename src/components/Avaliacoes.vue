@@ -1,29 +1,35 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import { db } from "../firebase"; // Importe sua configuração Firebase
-import { auth } from "../firebase"; // Importar o módulo de autenticação
-import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { db } from "../firebase"; // Configuração Firebase
+import { auth } from "../firebase"; // Autenticação
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
 import { onAuthStateChanged } from "firebase/auth";
+import { watch } from "vue";
 
-const reviews = ref([]); // Armazena as avaliações
+const reviews = ref([]); // Avaliações
 const newReview = ref({
   name: "",
   comment: "",
   rating: 0,
-  hoverRating: 0, // Para manipulação do hover
+  hoverRating: 0,
 });
 
-const user = ref(null); // Armazena o usuário autenticado
+const user = ref(null); // Usuário autenticado
+const locationId = ref("hotel-fazenda-123"); // Identificador único do local
 
-// Verificar se o usuário está autenticado
+// Verificar autenticação
 onAuthStateChanged(auth, (currentUser) => {
-  user.value = currentUser; // Atualiza o usuário atual
+  user.value = currentUser;
 });
 
-// Carregar avaliações do Firebase
+// Carregar avaliações do local atual
 const loadReviews = async () => {
   try {
-    const querySnapshot = await getDocs(collection(db, "reviews"));
+    const q = query(
+      collection(db, "reviews"),
+      where("locationId", "==", locationId)
+    );
+    const querySnapshot = await getDocs(q);
     reviews.value = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
     console.error("Erro ao carregar avaliações:", error);
@@ -43,38 +49,38 @@ const addReview = async () => {
     return;
   }
 
-  // Adicionar a nova avaliação ao Firestore
-  await addDoc(collection(db, "reviews"), {
-    ...newReview.value,
-    userId: user.value.uid, // Vincula a avaliação ao usuário autenticado
-  });
+  try {
+    await addDoc(collection(db, "reviews"), {
+      ...newReview.value,
+      userId: user.value.uid,
+      locationId, // Vincula a avaliação ao local
+    });
 
-  // Limpar o formulário após enviar
-  newReview.value = { name: "", comment: "", rating: 0, hoverRating: 0 };
-
-  // Carregar as avaliações novamente para atualizar a lista
-  loadReviews();
+    newReview.value = { name: "", comment: "", rating: 0, hoverRating: 0 };
+    loadReviews();
+  } catch (error) {
+    console.error("Erro ao adicionar avaliação:", error);
+    alert("Não foi possível enviar a avaliação. Tente novamente mais tarde.");
+  }
 };
 
-// Função para lidar com o hover das estrelas
+// Funções auxiliares para estrelas
 const handleMouseOver = (rating) => {
   newReview.value.hoverRating = rating;
 };
-
-// Função para remover o hover
 const handleMouseOut = () => {
   newReview.value.hoverRating = 0;
 };
-
-// Função para definir a avaliação final
 const handleStarClick = (rating) => {
   newReview.value.rating = rating;
 };
 
-onMounted(() => {
-  loadReviews(); // Carrega as avaliações quando o componente é montado
+// Carregar avaliações ao montar o componente
+watch(() => locationId, () => {
+  loadReviews();
 });
 </script>
+
 
 <template>
   <div id="reviews-section">
@@ -118,15 +124,24 @@ onMounted(() => {
 
     <!-- Lista de avaliações -->
     <div v-if="reviews.length > 0">
-      <div class="review" v-for="review in reviews" :key="review.id">
-        <h3>{{ review.name }}</h3>
-        <p>{{ review.comment }}</p>
-        <p>Nota: {{ review.rating }}/5</p>
-      </div>
+  <div class="review" v-for="review in reviews" :key="review.id">
+    <h3>{{ review.name }}</h3>
+    <p>{{ review.comment }}</p>
+    <div class="stars">
+      <i
+        v-for="n in 5"
+        :key="n"
+        :class="{
+          'fa fa-star': review.rating >= n,
+          'fa fa-star-o': review.rating < n,
+        }"
+      ></i>
     </div>
-    <div v-else>
-      <p>Ainda não há avaliações para este hotel.</p>
-    </div>
+  </div>
+</div>
+<div v-else>
+  <p>Ainda não há avaliações para este local.</p>
+</div>
   </div>
 </template>
 

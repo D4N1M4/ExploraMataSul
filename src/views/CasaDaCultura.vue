@@ -6,11 +6,8 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Hotel%20Fazenda%20-%20Bonito/163755778.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Hotel%20Fazenda%20-%20Bonito/280382154.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Hotel%20Fazenda%20-%20Bonito/468684956.jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Hotel%20Fazenda%20-%20Bonito/82779947.jpg", alt: "Image 4" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Hotel%20Fazenda%20-%20Bonito/82786129.jpg", alt: "Image 5" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Casa da Cultura Hemílio Borba-20250111T011930Z-001/Casa da Cultura Hemílio Borba/R.jpeg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Casa da Cultura Hemílio Borba-20250111T011930Z-001/Casa da Cultura Hemílio Borba/hqdefault.jpg", alt: "Image 2" },
 ];
 
 // Configurações de paginação
@@ -66,28 +63,17 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Hotel Fazenda</h1>
-      <p>O Hotel Fazenda Pedra está rodeado por vales verdes e pela floresta exótica.</p>
+      <h1>Fundação Casa da Cultura Hemílio Borba</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>
-        O Hotel Fazenda Pedra está rodeado por vales verdes e pela floresta exótica. O Do Rodeadouro está localizado na cidade campestre de Bonito. Gratuito. O Wi-Fi está disponível. Acesso e TVs de tela plana são fornecidos. As atividades de aventura incluem passeios a cavalo, trilhas a pé e banhos de cachoeira. Você pode passear pelo toboágua emocionante. As crianças podem usufruir do salão de jogos e do parquinho infantil no local. O Hotel Fazenda Engenho oferece quartos decorados de forma simples, com ventilador de teto, DVD player e frigobar. Você pode relaxar e assistir ao pôr do sol a partir da varanda térrea privativa, que oferece uma área de estar e rede. A famosa Cachoeira Véu da Noiva fica a apenas 3 km de distância e a Cachoeira Mágico fica a 9 km de distância. A estação rodoviária mais próxima fica a 7 km de distância e oferece fácil acesso de e para o hotel.
-      </p>
+      <p>Instituída, em 1983, pela Prefeitura Municipal dos Palmares, cidade natal do escritor homenageado, localizada na Mata Sul do Estado de Pernambuco. É a primeira fundação cultural criada no Interior do Estado.</p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.157124739687!2d-35.74517056345941!3d-8.524918747623179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa1064af2d72f5%3A0xec41ac6a82557e84!2sHotel%20Fazenda%20Engenho%20Pedra%20Do%20Rodeadouro!5e1!3m2!1spt-BR!2sbr!4v1736465877384!5m2!1spt-BR!2sbr"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31552.917668782757!2d-35.60567436221485!3d-8.68064062314263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x700a0125fa2b4ad%3A0xf487ed121ebec60b!2sCasa%20da%20Cultura%20Hermilo%20Borba%20Filho!5e0!3m2!1spt-BR!2sbr!4v1736558836639!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->
