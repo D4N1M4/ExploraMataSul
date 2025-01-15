@@ -1,10 +1,10 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { db } from "../firebase"; // Configuração Firebase
 import { auth } from "../firebase"; // Autenticação
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
-import { watch } from "vue";
+import { useRoute } from "vue-router";
 
 const reviews = ref([]); // Avaliações
 const newReview = ref({
@@ -15,9 +15,10 @@ const newReview = ref({
 });
 
 const user = ref(null); // Usuário autenticado
-const locationId = ref("hotel-fazenda-123"); // Identificador único do local
+const route = useRoute(); // Obtém a rota atual
+const locationId = computed(() => route.name); // Identificador único do local atual (pelo nome da rota)
 
-// Verificar autenticação
+// Verificar autenticação do usuário
 onAuthStateChanged(auth, (currentUser) => {
   user.value = currentUser;
 });
@@ -25,11 +26,14 @@ onAuthStateChanged(auth, (currentUser) => {
 // Carregar avaliações do local atual
 const loadReviews = async () => {
   try {
+    if (!locationId.value) return; // Verifica se o local está definido
+
     const q = query(
       collection(db, "reviews"),
-      where("locationId", "==", locationId)
+      where("locationId", "==", locationId.value)
     );
     const querySnapshot = await getDocs(q);
+
     reviews.value = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
     console.error("Erro ao carregar avaliações:", error);
@@ -37,7 +41,7 @@ const loadReviews = async () => {
   }
 };
 
-// Adicionar uma nova avaliação
+// Adicionar nova avaliação
 const addReview = async () => {
   if (!newReview.value.name || !newReview.value.comment || !newReview.value.rating) {
     alert("Preencha todos os campos!");
@@ -53,11 +57,11 @@ const addReview = async () => {
     await addDoc(collection(db, "reviews"), {
       ...newReview.value,
       userId: user.value.uid,
-      locationId, // Vincula a avaliação ao local
+      locationId: locationId.value, // Vincula a avaliação ao local atual
     });
 
     newReview.value = { name: "", comment: "", rating: 0, hoverRating: 0 };
-    loadReviews();
+    loadReviews(); // Recarrega as avaliações
   } catch (error) {
     console.error("Erro ao adicionar avaliação:", error);
     alert("Não foi possível enviar a avaliação. Tente novamente mais tarde.");
@@ -76,7 +80,7 @@ const handleStarClick = (rating) => {
 };
 
 // Carregar avaliações ao montar o componente
-watch(() => locationId, () => {
+onMounted(() => {
   loadReviews();
 });
 </script>
@@ -84,7 +88,7 @@ watch(() => locationId, () => {
 
 <template>
   <div id="reviews-section">
-    <h2>Avaliações</h2>
+    <h2>Avaliações para {{ locationId }}</h2>
 
     <!-- Mostrar mensagem se o usuário não estiver logado -->
     <div v-if="!user">
@@ -124,24 +128,24 @@ watch(() => locationId, () => {
 
     <!-- Lista de avaliações -->
     <div v-if="reviews.length > 0">
-  <div class="review" v-for="review in reviews" :key="review.id">
-    <h3>{{ review.name }}</h3>
-    <p>{{ review.comment }}</p>
-    <div class="stars">
-      <i
-        v-for="n in 5"
-        :key="n"
-        :class="{
-          'fa fa-star': review.rating >= n,
-          'fa fa-star-o': review.rating < n,
-        }"
-      ></i>
+      <div class="review" v-for="review in reviews" :key="review.id">
+        <h3>{{ review.name }}</h3>
+        <p>{{ review.comment }}</p>
+        <div class="stars">
+          <i
+            v-for="n in 5"
+            :key="n"
+            :class="{
+              'fa fa-star': review.rating >= n,
+              'fa fa-star-o': review.rating < n,
+            }"
+          ></i>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div v-else>
-  <p>Ainda não há avaliações para este local.</p>
-</div>
+    <div v-else>
+      <p>Ainda não há avaliações para este local.</p>
+    </div>
   </div>
 </template>
 

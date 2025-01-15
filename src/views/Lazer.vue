@@ -28,8 +28,8 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       Localizado no distrito de Palmares, local é muito frequentado por moradores que buscam se refrescar no tempo quente, é conhecido por fazer parte da antiga Usina desativada de Serra Azul.            
                     <br />
-                    <a href="#">Saber Mais</a>
-                    </p>
+                    <router-link to="/CachoeiraSerraAzul">Saiba mais</router-link>
+                  </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Cachoeira%20de%20Cerra%20Azul%20-%20Palmares/2024-04-29.jpg?raw=true" alt="Cachoeira de Serra Azul" class="imagem-secao" />
         </div>
@@ -39,8 +39,8 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       Localizado na cidade de Ribeirão, é um local muito procurado, principamente no verão, um local que promete diversão e relaxamento.
                         <br />
-                        <a href="#">Saber Mais</a>
-                    </p>
+                        <router-link to="/MinasEcoPark">Saiba mais</router-link>
+                      </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Minas%20ecopark%20-%20Ribeir%C3%A3o/73295854_113822193376789_5095507916748750848_n.jpg?raw=true" alt="Minas EcoPark" class="imagem-secao" />
         </div>
@@ -50,7 +50,7 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       Orla localizada a beira do rio Una na cidade de Palmares, é um local de lazer, onde oferece brinquedos publicos, máquinas de praticar exercício e locais para alimmentação, com uma ciclovia e uma área para caminhada de pedestres.                         
                         <br />
-                        <a href="#">Saber Mais</a>
+                        <router-link to="/OrlaPalmares">Saiba mais</router-link>
                     </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Orla%20de%20Palmares/maxresdefault.jpg?raw=true" alt="Orla de Palmares" class="imagem-secao"/>

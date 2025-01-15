@@ -28,8 +28,8 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       Localizado no distrito de Várzea do Una, foi fundado em 22 de abril de 2000 por Bertrando Bernardino, com o objetivo de servir de abrigo e preservação da cultura regional e meio ambiente.
                     <br />
-                    <a href="#">Saber Mais</a>
-                    </p>
+                    <router-link to="/MuseuDoUna">Saiba mais</router-link>
+                  </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Museu%20do%20Una%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/museu-do-una%20(1).jpg?raw=true" class="imagem-secao" />
         </div>
@@ -40,7 +40,7 @@ import NavBar from '../components/NavBar.vue';
                       Fundado no século XVIII, pela Baronesa de Gindahy, e está localizado
                       a cerca de 6 km da rodovia PE-060.
                         <br />
-                        <a href="#">Saber Mais</a>
+                        <router-link to="/EngenhoMorim">Saiba mais</router-link>
                     </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Engenho%20Morim%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/WhatsApp-Image-2021-08-05-at-12.00.39.jpeg?raw=true" alt="Engenho Morim" class="imagem-secao" />
@@ -51,7 +51,7 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       O Cine-Teatro Apollo foi inaugurado em 1914, construído com o propósito de atender às atividades culturais, que na época eram desenvolvidas e ganhavam espaço na sociedade local, vindo a representar para a região um bem cultural que poucas cidades do interior possuíam.
                         <br />
-                        <a href="#">Saber Mais</a>
+                        <router-link to="/TeatroApolo">Saiba mais</router-link>
                     </p>
             </div>
             <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Cine%20Teatro%20Apolo%20-%20Palmares/fachada_cine_teatro.webp" alt="Cine Teatro Apolo" class="imagem-secao"/>

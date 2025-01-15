@@ -1,3 +1,4 @@
+import { createRouter, createWebHistory } from "vue-router";
 import Register from "@/components/Register.vue";
 import Avaliacao from "@/views/Avaliacao.vue";
 import Historico from "@/views/Historico.vue";
@@ -12,7 +13,12 @@ import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
 import HotelFazenda from "@/views/HotelFazenda.vue";
 import Perfil from '@/views/Perfil.vue'; 
 import CasaDaCultura from '@/views/CasaDaCultura.vue'; 
-import { createRouter, createWebHistory } from "vue-router";
+import EngenhoMorim from '@/views/EngenhoMorim.vue'; 
+import MuseuDoUna from '@/views/MuseuDoUna.vue'; 
+import TeatroApolo from '@/views/TeatroApolo.vue'; 
+import CachoeiraSerraAzul from '@/views/CachoeiraSerraAzul.vue'; 
+import MinasEcoPark from "@/views/MinasEcoPark.vue";
+import OrlaPalmares from "@/views/OrlaPalmares.vue";
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -25,6 +31,12 @@ const routes = [
   { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande/Avaliacao", name:"Avaliacao", component: Avaliacao },
   { path: "/HotelFazenda", name:"HotelFazenda", component: HotelFazenda },
   { path: "/CasaDaCultura", name:"CasaDaCultura", component: CasaDaCultura },
+  { path: "/EngenhoMorim", name:"EngenhoMorim", component: EngenhoMorim },
+  { path: "/MuseuDoUna", name:"MuseuDoUna", component: MuseuDoUna },
+  { path: "/TeatroApolo", name:"TeatroApolo", component: TeatroApolo },
+  { path: "/CachoeiraSerraAzul", name:"CachoeiraSerraAzul", component: CachoeiraSerraAzul },
+  { path: "/MinasEcoPark", name:"MinasEcoPark", component: MinasEcoPark },
+  { path: "/OrlaPalmares", name:"OrlaPalmares", component: OrlaPalmares },
 
   {
     path: '/Perfil',
