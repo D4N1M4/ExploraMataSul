@@ -6,10 +6,9 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia Porto de Nassau - Barreiros/hq720.jpg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia Porto de Nassau - Barreiros/maxresdefault (3).jpg", alt: "Image 2" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia Porto de Nassau - Barreiros/porto-foto-01-1536x1024-1.png", alt: "Image 3" },
 ];
 
 // Configurações de paginação
@@ -65,18 +64,18 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Praia Porto de Nassau</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
+      <p>Localizado a 7 km do centro da cidade, a Praia de Porto Nassau é um dos grandes atrativos do litoral-sul, foi utilizada nas gravações da novela a Indomada (1997), da Rede Globo. Além disso, a praia tem um a linda vegetação e o mar azul causando uma boa impressão a quem visita.
 </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.763207858956!2d-35.1207748!3d-8.8083028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7007bf3faa1d64f%3A0xb211ca103f89bf16!2sPraia%20do%20Porto%20de%20Nassau!5e0!3m2!1spt-BR!2sbr!4v1736983479101!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

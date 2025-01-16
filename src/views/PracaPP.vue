@@ -6,10 +6,8 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Praça Paulo Paranhos - Palmares/1462776_762212570458899_1952229222_o.jpg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Lazer-20241218T011618Z-001/Lazer/Praça Paulo Paranhos - Palmares/WhatsApp Image 2019-06-09 at 10.15.33 (1).jpeg", alt: "Image 2" },
 ];
 
 // Configurações de paginação
@@ -65,18 +63,37 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Praça Dr. Paulo Paranhos</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
+      <p>Entre os anos de 1864 a 1891, era um espaço que ficava ao lado da Capela de Nossa Senhora dos Montes. No ano de 1892, foi comprado pela municipalidade para a construção do Mercado, visto que o Largo da Feira, na Praça do Maurity, não estava mais servindo para tal propósito e o comércio era muito intenso. O local pertencia ao Coronel Luiz Amaro de França Pereira.
+
+O primeiro Gestor Público dos Palmares, o Dr. Leopoldo Marinho de Paula Lins, logo no início de sua administração, começou os trabalhos de construção, lançando a pedra fundamental do Mercado Público da Cidade dos Palmares no dia 2 de janeiro de 1893.
+
+O prédio era composto por três casas. As laterais eram divididas em 60 compartimentos, sendo as da direita destinadas as fazendas e miudezas e as da esquerda a molhados e açougue. A do centro era um vasto armazém onde eram colocados os vendedores de farinha, legumes, frutas entre outros.
+
+Serviu aos habitantes e a visitantes da região por mais de 90 décadas, até que um projeto apresentado pelo Prefeito Luiz Portela, entre os anos de 1986 e 1987, para a construção da Praça Dr. Paulo Paranhos, demoliu o mercado, pois o projeto foi encaminhando para votação popular e aprovado. A demolição foi causa de protesto dos Membros Fundadores da Casa da Cultura, que na época tinha planos para a criação de um espaço cultural e artístico no mesmo local.
+
+Após a demolição, a construção da praça teve andamento, sendo inaugurada na década de 1990, pelo então Prefeito Francisco de Assis Rodrigues (Chiquinho). A Praça Dr. Paulo Paranhos é um dos pontos mais importantes da cidade dos Palmares, não só pelos traços de sua arquitetura, mas pelos fatos históricos que se passaram em volta da mesma quando ainda era um caminho de viajantes e paragem para o descanso, antes mesmo da construção da capelinha dos Montes, em 1864.
+
+PREFEITURA DO MUNICÍPIO DOS PALMARES
+Prefeito Júnior Melo
+
+FUNDAÇÃO CASA DA CULTURA HERMILO BORBA FILHO
+Presidente Nonato Barakah
+
+Fonte:
+
+CENTRO DE REGISTRO E DOCUMENTAÇÃO GIVANILTON MENDES
+Diretor Ademir Basílio
 </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.059228431813!2d-35.5901321!3d-8.6859179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x700a06b069c4dcf%3A0x4ad7a5ad7e923b7a!2sPr%C3%A7.%20Dr.%20Paulo%20Paranhos%20-%20Palmares%2C%20PE%2C%2055540-000!5e0!3m2!1spt-BR!2sbr!4v1736988902053!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

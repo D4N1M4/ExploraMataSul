@@ -6,10 +6,10 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Catende/307314024_536244475168951_3767427162553961362_n.jpg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Catende/311467291_549074987219233_7225069439702529538_n.jpg", alt: "Image 2" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Catende/usina-catende.webp", alt: "Image 3" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Catende/whatsapp-image-2022-03-28-at-130209.jpg", alt: "Image 4" },
 ];
 
 // Configurações de paginação
@@ -65,18 +65,54 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Usina Catende</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
+      <p>Está situada no município de Catende, na margem esquerda do rio Pirangi, numa altitude
+de 153 metros. Fundada, em 1890, com o nome de usina Correia da Silva, em homenagem
+ao então vice-governador do Estado. Foi originalmente construída pelo inglês Carlos Sinden
+e seu sogro Felipe Paes de Oliveira. Esse nome, no entanto nunca se consagrou, sendo a
+usina sempre chamada de Catende.
+Em 1892, passou a ser usina Catende, construída no antigo engenho Milagre da Conceição,
+fundado em 1829.
+A Usina não teve sucesso, sendo entregue a credores, entre os quais o Banco de
+Pernambuco. Houve várias tentativas de exploração, mas sem resultados, até que, em
+1907, foi adquirida pela firma Mendes Lima & Cia, que a reformou (1912), aumentando a
+sua capacidade de moagem de 200 para 1000 toneladas diárias.
+Os proprietários, no entanto, eram comerciantes e não industriais. Interessava-lhes vender
+o açúcar e não fabricá-lo. A usina foi novamente vendida, dessa vez para a firma Costa,
+Oliveira & Cia.
+Com a saída dos demais sócios, em 1927, a usina passou a ser propriedade do coronel
+Antônio Ferreira da Costa Azevedo, conhecido pelo apelido de Seu Tenente, que
+revolucionou toda a zona canavieira da mata sul de Pernambuco, com seu sistema técnico
+e administrativo, servindo de exemplo para diversas usinas da região.
+Em 1929, a usina era considerada a maior do Brasil em produção e capacidade. Possuía 43
+propriedades agrícolas, uma via férrea de 140 quilômetros, 11 locomotivas e 266 vagões. O
+transporte da cana e seus produtos era feito pela Great Western.
+Tinha capacidade para processar 1.500 toneladas de cana e fabricar 4.000 litros de álcool
+em 22 horas. Na época da moagem trabalhavam na fábrica cerca de 700 operários.
+Possuía uma vila operária com 200 casas, uma Caixa de Beneficência e mantinha uma
+escola com freqüência média anual de 50 alunos.
+Quando morreu, em 1950, Antônio Ferreira da Costa Azevedo, o Seu Tenente, deixou a
+usina Catende com uma capacidade industrial para fabricação de 1 milhão de sacos de
+açúcar, uma destilaria de álcool anidro (a primeira do país), 36 mil hectares de terra, 165
+quilômetros de estradas de ferro e 82 engenhos de cana.
+Seu filho mais velho, João Azevedo, assumiu a direção da usina. Durante a sua gestão, a
+usina Catende absorveu a usina Pirangi e seus dez engenhos.
+Em 1973, a usina Catende foi adquirida por um grupo formado por Rui Carneiro da Cunha
+(co-proprietário da usina Massauassu), Alfredo Maurício de Lima Fernandes e Mário Pinto
+Campos. Este último, alguns anos depois, vendeu sua parte para Inaldo Pereira Guerra,
+comerciante de açúcar no Recife e criador de gado em Gravatá.
+Entre 1922 e 1993 a usina Catende mudou sua razão social para Companhia Industrial do
+Nordeste Brasileiro.
 </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.2210228381523!2d-35.7194596!3d-8.6705191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x700a7eb2e3ba79f%3A0x9c4d7bbc444a979f!2sUsina%20Catende!5e0!3m2!1spt-BR!2sbr!4v1736986977505!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

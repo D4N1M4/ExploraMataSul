@@ -6,10 +6,8 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Catedral de Nossa Senhora da Conceição - Palmares/bb1.jpg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos-20241218T011238Z-001/Históricos/Catedral de Nossa Senhora da Conceição - Palmares/whatsapp-image-2020-12-30-at-17-23-47-500x492.jpeg", alt: "Image 2" },
 ];
 
 // Configurações de paginação
@@ -65,18 +63,33 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Paróquia de Nossa Senhora da Conceição dos Montes</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
+      <p>A 1ª Capela, foi construída em fins de janeiro de 1864 pelos Missionários Apostólicos Capuchinhos Frei Fidelis D’Ávila e Frei Casemiro de Militello. No dia 04 de fevereiro de 1864, D. Germana Francisca Xavier, faz a doação das terras da Capela e do terreno ao lado para a construção do cemitério.
+
+No dia 28 de maio de 1868, a Capela do Povoado, recebe o título de Freguesia de Nª Sª da Conceição dos Montes. No dia 13 de dezembro de 1869, é nomeado canonicamente, pelo Governo do Bispado de Pernambuco, o Vigário Encomendado, chegando no povoado no dia 15 de dezembro de 1869, o Reverendo Padre Floriano de Queiroz Coutinho, de 27 anos de idade, vindo da Freguesia de Escada, para assumir a dos Montes.
+
+Entre os anos de 1864 a 1872, a pequena Capela, passou por algumas reformas. Em princípios de janeiro de 1873, começa uma campanha, para a construção da Igreja Matriz. Em 8 meses, foi construída o Corpo da Igreja, inaugurada no dia 23 de agosto de 1873.
+
+Entre os anos de 1873 a 1890, a mesma, não sofreu alteração de reformas. Com a chegada o 1º Vigário Colado da Freguesia, o Padre Sebastião Bastos de Almeida Pessoa, um dos Fundadores do Jornal A Notícia de Palmares, começa uma campanha para a construção das Torres e das Laterais da Igreja Matriz.
+
+No centenário da Comarca dos Palmares, a igreja Matriz da Cidade dos Palmares, passa a ser, em 1962, a Sede da Diocese da Paróquia dos Palmares, sendo empossado o seu 1º Bispo, D. Acácio Rodrigues Alves.
+
+Nestes 150 anos da construção definitiva da Igreja Matriz de Nossa Senhora da Conceição dos Montes – Espaço Sagrado para Todos Nós, foi palco de muitas histórias, tendo recebido inúmeros visitantes ilustres, como a do Príncipe Imperial, o Conde D’Eu, de Bispos, de Barões e Baronesas, de Conselheiros Imperiais, de Casamentos Memoráveis, das Eleições Políticas Locais, em tempos imperiais, de Procissões inesquecíveis dentre tantos outros acontecimentos, que marcaram as páginas da nossa história!
+
+O Prédio da Matriz de Nossa Senhora da Conceição dos Montes, é um Patrimônio Histórico Cultural, Artístico e Religioso do Município dos Palmares.
+
+Fonte:
+CENTRO DE REGISTRO E DOCUMENTAÇÃO GIVANILTON MENDES
 </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31552.51220637573!2d-35.6072667604492!3d-8.685461699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x700a06b032388e9%3A0x651f23e41b3144a7!2sPar%C3%B3quia%20de%20Nossa%20Senhora%20da%20Concei%C3%A7%C3%A3o%20dos%20Montes!5e0!3m2!1spt-BR!2sbr!4v1736985633862!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

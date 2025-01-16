@@ -6,10 +6,9 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Igreja de São Benedito - São José da Coroa Grande/Igreja-de-São-Benedito.webp", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Igreja de São Benedito - São José da Coroa Grande/igreja-de-sao-jose-sao-jose-da-coroa-grande-pernambuco-1024x576.jpg", alt: "Image 2" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Igreja de São Benedito - São José da Coroa Grande/sao-jose-da-coroa-grande-500x438.jpg", alt: "Image 3" },
 ];
 
 // Configurações de paginação
@@ -65,18 +64,34 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Igreja de São Benedito</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
-</p>
+      <p>
+        A igreja foi construída pelos holandeses, tendo como padroeiro, São
+Benedito. Fica localizada no distrito do Abreu do Una. Em 1961, foi
+demolida pelo senhor do engenho conhecido nas redondezas por
+Otávio. Mais acima, foi construída uma nova capela em homenagem a
+São João Batista. Na localidade, existiu uma festa muito popular: a
+festa de reis. Já a igreja do Abreu foi uma capela de engenho, feita
+pelo dono do engenho na década de 1920.
+fonte:
+https://tomeconta.tce.pe.gov.br/sao-jose-da-coroa-grande      </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.157124739687!2d-35.74517056345941!3d-8.524918747623179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa1064af2d72f5%3A0xec41ac6a82557e84!2sHotel%20Fazenda%20Engenho%20Pedra%20Do%20Rodeadouro!5e1!3m2!1spt-BR!2sbr!4v1736465877384!5m2!1spt-BR!2sbr"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

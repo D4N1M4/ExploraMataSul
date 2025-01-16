@@ -26,19 +26,19 @@ import NavBar from '../components/NavBar.vue';
                     <p>
                       Localizado a 7 km do centro da cidade, a Praia de Porto Nassau é um dos grandes atrativos do litoral-sul, foi utilizada nas gravações da novela a Indomada (1997), da Rede Globo. Além disso, a praia tem um a linda vegetação e o mar azul causando uma boa impressão a quem visita.
                     <br />
-                    <a href="#">Saber Mais</a>
-                    </p>
+                    <router-link to="/PraiaBarreiros">Saiba mais</router-link>
+                  </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Litoral-20241218T011313Z-001/Litoral/Praia%20Porto%20de%20Nassau%20-%20Barreiros/maxresdefault%20(3).jpg?raw=true" class="foto - praia do porto de Nassau em Barreiros - PE " />
         </div>
         <div class="bloco">
             <div class="texto-lado">
-                <h2>Praia dos Caneiros </h2>
+                <h2>Praia dos Carneiros </h2>
                     <p>
                       A Praia dos Carneiros está localizada em Tamandaré, Pernambuco, a cerca de 100 km de Recife e 56 km de Porto de Galinhas. É conhecida por suas águas calmas e transparentes, piscinas naturais e a famosa Igrejinha de São Benedito. É um ótimo lugar para relaxar, nadar e explorar a natureza.
                         <br />
-                        <a href="#">Saber Mais</a>
-                    </p>
+                        <router-link to="/PraiaCarneiros">Saiba mais</router-link>
+                      </p>
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Litoral-20241218T011313Z-001/Litoral/Praia%20dos%20Carneiros%20-%20Tamandar%C3%A9/praia-dos-carneiros.jpg?raw=true" alt="Minas EcoPark" class="imagem-secao" />
         </div>

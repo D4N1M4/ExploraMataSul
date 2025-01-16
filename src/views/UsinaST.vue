@@ -6,10 +6,10 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Santa terezinha - Água Preta/20210104180052231225a.jpg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Santa terezinha - Água Preta/mobile.jpg", alt: "Image 2" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Santa terezinha - Água Preta/usina-de-arte-moendo (1).jpg", alt: "Image 3" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Históricos-20241218T011238Z-001/Históricos/Usina Santa terezinha - Água Preta/usina-de-arte-moendo.jpg", alt: "Image 4" },
 ];
 
 // Configurações de paginação
@@ -65,18 +65,43 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Usina de Arte de Santa Terezinha</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
+      <p>A partir da combinação de um museu de arte contemporânea ao ar livre instalado em meio a um
+jardim botânico, a Usina de Arte tem sido, desde 2015, um instrumento de transformação
+socioeconômica para mais de 6 mil pessoas que residem em seu entorno, a partir de iniciativas
+que irrigam educação, cultura, resiliência ambiental, empreendedorismo e autoestima na vila de
+Santa Terezinha.
+Comunidade que recebe o mesmo nome da Usina Santa Terezinha, cuja operação começou em
+1929, sob a condução da família Pessôa de Queiroz. Em menos de 20 anos de fundação, o
+empreendimento alcançou o posto de maior produtora de álcool e açúcar do Brasil nos anos 1950,
+contando com uma estrutura que reunia hangar, mais de 100km de estradas de ferro, 21
+locomotivas e mais de uma centena de vagões para a logística no negócio sucroalcooleiro. Em
+1998, atingida por grave crise que assolou outros empreendimentos do tipo na região, a usina
+encerrou suas atividades de moagem.
+Passados quase 75 anos do seu apogeu, o espaço localizado no município de Água Preta, na Zona
+da Mata Sul de Pernambuco, assiste a outro ponto alto de sua trajetória - e que não passa mais
+pela transformação da cana-sacarina em álcool e açúcar. Hoje, as safras da Usina de Arte
+entregam uma nova visão cultural, socioeducativa e sustentável para o Nordeste brasileiro. Um
+instrumento de renovação a partir da ruptura com o passado, construindo o futuro a partir dos
+férteis alicerces da cultura, educação e meio ambiente.
+Em meio a um perene trabalho de reflorestamento (até o final de 2022, 35 hectares receberam
+cerca de 10 mil plantas de mais de 600 espécies), o Parque Artístico-Botânico é apenas a parte
+mais visível, e visitada, de uma ampla rede de apoio à vila de Santa Terezinha e aos municípios de
+Água Preta (PE) e Campestre (AL). São exemplos a escola de música, a biblioteca e centro de
+conhecimento público com potente acervo literário, FabLab com terminais de computadores
+conectados à internet, impressoras em 3D e cortadora a laser para projetos da comunidade, além
+de parceria com as unidades escolares no apoio de novas práticas pedagógicas.
+Fonte: https://www.usinadearte.org/a-usina
 </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.4951444159256!2d-35.5708122!3d-8.833406399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7009f31fc64e0fd%3A0xe770d138888ed099!2sUsina%20de%20Arte!5e0!3m2!1spt-BR!2sbr!4v1736987233602!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

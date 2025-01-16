@@ -6,10 +6,9 @@ import Avaliacoes from "../components/Avaliacoes.vue"; // Importe o componente A
 
 // Imagens
 const images = [
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/Sao-Jose-da-Coroa-Grande-Capa-1.jpg", alt: "Image 1" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/São-José-da-Coroa-Grande.jpg", alt: "Image 2" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/maxresdefault (4).jpg", alt: "Image 3" },
-  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Coroa Grande - São José da Coroa Grande/piscinas-naturais-de-sao-jose-da.webp", alt: "Image 4" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Várzea do Una - São José da Coroa Grande/maxresdefault (6).jpg", alt: "Image 1" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Várzea do Una - São José da Coroa Grande/pe-sao-jose-da-coroa-grande-praia-da-varzea-do-una-020.jpg", alt: "Image 2" },
+  { src: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/main/Litoral-20241218T011313Z-001/Litoral/Praia da Várzea do Una - São José da Coroa Grande/photo0jpg.jpg", alt: "Image 3" },
 ];
 
 // Configurações de paginação
@@ -65,18 +64,18 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Praia de São José da Coroa Grande</h1>
+      <h1>Praia da Várzea do Una</h1>
     </div>
 
     <section class="informacao">
       <h2>Informações</h2>
-      <p>Praia de São José da Coroa Grande fica no litoral sul de Pernambuco, Brasil. Lá, você encontra águas cristalinas, mornas e piscinas naturais formadas por recifes de corais. É um lugar perfeito para relaxar, mergulhar e aproveitar a beleza natural.
+      <p>Considerada uma das maiores da cidade, essa bela praia é conhecida também por sua tranquilidade e clima agradável. Não costuma ser muito frequentada por turistas, pois a maioria dos que visitam a cidade ainda não conhecem o lugar. Outra fator é seu difícil acesso, fazendo com que moradores próximos, pescadores e alguns surfistas sejam seus principais visitantes. Conta com uma larga faixa de areia dourada e grossa, o mar é agitado, com boas ondas e águas transparentes. Costuma atrair diversos surfistas, que aproveitam as ondas para praticar algumas manobras. Nessa praia, o visitante também tem a opção de tomar banho do Rio Una, que em certa parte vai de encontro ao mar. É uma boa opção para os que precisam relaxar e admiram o contato com a natureza. É importante levar alimentos e bebidas para que não aconteçam imprevistos. Fonte: Praias-360
 </p>
     </section>
 
     <section class="localizacao">
       <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.26508854987!2d-35.14483589999999!3d-8.899743449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70063746a51133d%3A0x1169fee3f3c09e0!2sPraia%20de%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20(Centro)!5e0!3m2!1spt-BR!2sbr!4v1736984796042!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7884.868011646849!2d-35.14241595!3d-8.839122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7007c963fd2c90b%3A0xdf56b060c530c8f2!2sV%C3%A1rzea%20do%20Una%2C%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande%20-%20PE%2C%2055565-000!5e0!3m2!1spt-BR!2sbr!4v1736990185283!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Aqui está o componente Avaliacoes -->

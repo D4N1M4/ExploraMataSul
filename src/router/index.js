@@ -19,6 +19,19 @@ import TeatroApolo from '@/views/TeatroApolo.vue';
 import CachoeiraSerraAzul from '@/views/CachoeiraSerraAzul.vue'; 
 import MinasEcoPark from "@/views/MinasEcoPark.vue";
 import OrlaPalmares from "@/views/OrlaPalmares.vue";
+import PraiaBarreiros from "@/views/PraiaBarreiros.vue";
+import PraiaCarneiros from "@/views/PraiaCarneiros.vue";
+import CatedralNSC from "@/views/CatedralNSC.vue";
+import MatrizSA from "@/views/MatrizSA.vue";
+import MatrizSMA from "@/views/MatrizSMA.vue";
+import IgrejaSB from "@/views/IgrejaSB.vue";
+import UsinaCatende from "@/views/UsinaCatende.vue";
+import UsinaST from "@/views/UsinaST.vue";
+import MinaDaPedra from "@/views/MinaDaPedra.vue";
+import EcoParkSA from "@/views/EcoParkSA.vue";
+import PracaNSR from "@/views/PracaNSR.vue";
+import PracaPP from "@/views/PracaPP.vue";
+import PraiaVU from "@/views/PraiaVU.vue";
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -37,43 +50,26 @@ const routes = [
   { path: "/CachoeiraSerraAzul", name:"CachoeiraSerraAzul", component: CachoeiraSerraAzul },
   { path: "/MinasEcoPark", name:"MinasEcoPark", component: MinasEcoPark },
   { path: "/OrlaPalmares", name:"OrlaPalmares", component: OrlaPalmares },
+  { path: "/PraiaBarreiros", name:"PraiaBarreiros", component: PraiaBarreiros },
+  { path: "/PraiaCarneiros", name:"PraiaCarneiros", component: PraiaCarneiros },
+  { path: "/CatedralNSC", name:"CatedralNSC", component: CatedralNSC },
+  { path: "/MatrizSA", name:"MatrizSA", component: MatrizSA },
+  { path: "/MatrizSMA", name:"MatrizSMA", component: MatrizSMA },
+  { path: "/IgrejaSB", name:"IgrejaSB", component: IgrejaSB },
+  { path: "/UsinaCatende", name:"UsinaCatende", component: UsinaCatende },
+  { path: "/UsinaST", name:"UsinaST", component: UsinaST },
+  { path: '/Perfil', name: 'Perfil', component: Perfil,},
+  { path: "/", name: "home", component: HomeView,},
+  { path: "/Login", name: "Login", component: Login,},
+  { path: "/reset-password", name: "reset-password", component: ResetPassword,},
+  { path: "/Register", name: "Register", component: Register,},
+  { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande", name: "PraiaDeSaoJoseDaCoroaGrande", component: PraiaDeSaoJoseDaCoroaGrande,},
+  { path: "/MinaDaPedra", name: "MinaDaPedra",component: MinaDaPedra,},
+  { path: "/EcoParkSA", name: "EcoParkSA",component: EcoParkSA,},
+  { path: "/PracaNSR", name: "PracaNSR",component: PracaNSR,},
+  { path: "/PracaPP", name: "PracaPP",component: PracaPP,},
+  { path: "/PraiaVU", name: "PraiaVU",component: PraiaVU,},
 
-  {
-    path: '/Perfil',
-    name: 'Perfil',
-    component: Perfil,
-  },
-
-  {
-    path: "/", 
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/Login",
-    name: "Login",
-    component: Login,
-  },
-  {
-    path: "/reset-password", // Rota para recuperação de senha
-    name: "reset-password",
-    component: ResetPassword,
-  },
-  {
-    path: "/Register",
-    name: "Register",
-    component: Register,
-  },
-  {
-    path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande",
-    name: "PraiaDeSaoJoseDaCoroaGrande",
-    component: PraiaDeSaoJoseDaCoroaGrande,
-  },
-  {
-    path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande/Avaliacao",
-    name: "Avaliacao",
-    component: Avaliacao,
-  },
 ];
 
 const router = createRouter({
