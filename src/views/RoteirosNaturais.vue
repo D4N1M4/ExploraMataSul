@@ -22,38 +22,36 @@ import NavBar from '../components/NavBar.vue';
     <div class="blocos-container">
         <div class="bloco">
             <div class="texto-lado">
-                <h2>Rapel - Cachoeira Véu da Noiva I em Bonito, Pernambuco</h2>
+                <h2>Cachoeira da Boa Vista</h2>
                     <p>
-                      Você pode fazer um rapel de mais de 30 metros de altura e também experimentar uma tirolesa de mais de 300 metros de extensão. O local é conhecido por suas belas paisagens e oferece uma experiência emocionante para os amantes de aventura.
+                      Para quem gosta do contato com a natureza, São Benedito do Sul é uma excelente pedida. Localizada na Mata Sul, pertinho do Recife, a 174 km, oferece muitas trilhas, banhos cachoeiras, visita a engenhos antigos e, a sua área urbana abriga edificações históricas, que o turista pode conhecer num city tour a pé por suas ruas. 
                     <br />
                     <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Rapel%20na%20Cachoeira%20V%C3%A9u%20da%20Noiva%20I/Cachoeira-veu-da-Noiva-1-Bonito-Pernambuco-8.webp" alt="Rapel Cachoeira da Noiva - Bonito/PE"class="imagem-secao" />
+            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira Boa Vista - São Benedito do Sul/Cachoeira-Boa-Vista-4.webp" class="imagem-secao"/>
         </div>
         <div class="bloco">
             <div class="texto-lado">
-                <h2>Teleférico Governador Eduardo Campos  </h2>
+                <h2>Cachoeira Bulha D'Água</h2>
                     <p>
-                      Funcionando de quinta a domingo, das 09h às 16h, o teleférico de Bonito é uma das atrações da cidade. No alto do morro onde fica o teleférico existe uma pequena capela, a Capela de Monte Serrat, erguida em 1954. Mas ela só pode ser visitada a partir desse passeio de teleférico. Antes, era possível subir a pé até lá, mas um portão foi colocado no local. Enfim … de toda a forma, dizem ser muito bonito o pôr do sol por ali.
+                      A diversidade da natureza proporciona, a quem visita Tamandaré, um encontro inesquecível com a cachoeira Bulha D'água. A cachoeira está encravada numa área de preservação da Mata Atlântica nos limites da Reserva Biológica de Saltinho e possui altura aproximada de 10 metros e largura de 15 metros. A cachoeira é muito procurada pelos visitantes, e suas águas mantém uma temperatura que nunca ultrapassa os 15ºC. Ela já foi uma grande fonte de água mineral, e hoje ainda preserva águas límpidas com três quedas fortes que atraem o turista que deseja ter um contato cada vez mais intenso com a natureza.
                         <br />
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Telef%C3%A9rico%20Governador%20Eduardo%20Campos/Bonito-Pernambuco-7.webp" alt="Teleferico - Bonito/PE" class="imagem-secao" />
+            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira Bulha D'Água - Tamandaré/46674721Master.jpg " class="imagem-secao"/>
         </div>
         <div class="bloco">
             <div class="texto-lado">
-                <h2>Cachoeira da Pedra Redonda</h2>
-                    <p>
-                      A Cachoeira da Pedra Redonda é outra maravilha em Bonito, Pernambuco! Esta cachoeira é conhecida por suas águas cristalinas e paisagens deslumbrantes. É um ótimo lugar para relaxar e aproveitar a natureza. A cachoeira está localizada no Parque Estadual do Petrol\u00e2ndia, e você pode chegar a ela através de uma trilha que oferece uma caminhada desafiadora, mas recompensadora.
-                      <br/>
-                      Você já visitou ou está planejando uma visita?
+                <h2>Cachoeira Peri Peri</h2>
+                    <p>                     
+                      A caminhada da Peri-Peri é simples e acessível, com percurso de 480 metros, considerada de nível leve, com tempo de caminhada de 10 minutos, chegando a Cachoeira Peri-Peri. Essa é moleza demais. Andar por apenas 10 minutos e cair nas águas maravilhosas da cachoeira é TOP.
                       <br />
                         <a href="#">Saber Mais</a>
                     </p>
             </div>
-            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20da%20Pedra%20Redonda/Cachoeira-da-Pedra-Redonda-Bonito-Pernambuco-6.webp" alt="cachoeira pedra redonda - bonito/PE " class="imagem-secao"/>
+            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira Peri Peri - São Benedito do Sul/1__mg_9136-17058192.webp" class="imagem-secao"/>
         </div>
     </div>
 </section>
