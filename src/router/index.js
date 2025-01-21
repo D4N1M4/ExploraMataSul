@@ -24,7 +24,6 @@ import PraiaCarneiros from "@/views/PraiaCarneiros.vue";
 import CatedralNSC from "@/views/CatedralNSC.vue";
 import MatrizSA from "@/views/MatrizSA.vue";
 import MatrizSMA from "@/views/MatrizSMA.vue";
-import IgrejaSB from "@/views/IgrejaSB.vue";
 import UsinaCatende from "@/views/UsinaCatende.vue";
 import UsinaST from "@/views/UsinaST.vue";
 import MinaDaPedra from "@/views/MinaDaPedra.vue";
@@ -32,6 +31,7 @@ import EcoParkSA from "@/views/EcoParkSA.vue";
 import PracaNSR from "@/views/PracaNSR.vue";
 import PracaPP from "@/views/PracaPP.vue";
 import PraiaVU from "@/views/PraiaVU.vue";
+import IgrejaSBSJ from "@/views/IgrejaSBSJ.vue";
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -55,7 +55,7 @@ const routes = [
   { path: "/CatedralNSC", name:"CatedralNSC", component: CatedralNSC },
   { path: "/MatrizSA", name:"MatrizSA", component: MatrizSA },
   { path: "/MatrizSMA", name:"MatrizSMA", component: MatrizSMA },
-  { path: "/IgrejaSB", name:"IgrejaSB", component: IgrejaSB },
+  { path: "/IgrejaSBSJ", name:"IgrejaSBSJ", component: IgrejaSBSJ },
   { path: "/UsinaCatende", name:"UsinaCatende", component: UsinaCatende },
   { path: "/UsinaST", name:"UsinaST", component: UsinaST },
   { path: '/Perfil', name: 'Perfil', component: Perfil,},
