@@ -1,11 +1,13 @@
 <script setup>
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
+import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
 </script>
 
 <template>
 <div id="home">
 <NavBar />
+<BarraDePesquisa />
 <main>
 <div class="area-visual">
     <div class="pesquisa">
