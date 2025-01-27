@@ -1,16 +1,15 @@
 <script setup>
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
+import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
 </script>
 
 <template>
   <div id="roteirosNaturais">
     <NavBar />
 <main>
+<BarraDePesquisa/>
 <div class="area-visual">
-    <div class="pesquisa">
-        <input type="text" placeholder="Pesquise por cidade ou lugar." />
-    </div>
     <div class="imagem-banner">
         <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20-%20S%C3%A3o%20Benedito%20do%20Sul/cachoeira.webp" />
         <div class="texto-banner">

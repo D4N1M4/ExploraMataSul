@@ -103,20 +103,20 @@ function logout() {
 
         <button type="submit" class="botao-login">Login</button>
       </form>
+      <div class="links-container">
+        <div class="forgot-password">
+          <router-link to="/reset-password">Esqueci a senha</router-link>
+        </div>
 
-      <!-- Link para "Esqueci a senha" -->
-      <div class="forgot-password">
-        <router-link to="/reset-password">Esqueci a senha</router-link>
+        <router-link to="/register" class="create-account-link">
+          Criar conta
+        </router-link>
       </div>
 
       <div class="social-login">
         <p>Ou entre com:</p>
         <button @click="loginWithGoogle" class="google-login">Login com Google</button>
       </div>
-
-      <router-link to="/register" class="create-account-link">
-        Criar conta
-      </router-link>
     </div>
     <Footer />
   </div>
@@ -190,30 +190,22 @@ function logout() {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.links-container {
+  display: flex;
+  justify-content: space-between;  /* Isso vai espalhar os links para as extremidades */
+  width: 100%;  /* Certifique-se de que o container ocupe toda a largura disponível */
+  margin-top: 10px;  /* Distância do topo */
+}
+
+.forgot-password,
 .create-account-link {
-  margin-top: 10px;
-  display: inline-block;
-  text-decoration: none;
-  color: #007bff;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.create-account-link:hover {
-  color: #0056b3;
-}
-
-.forgot-password {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.forgot-password a {
-  text-decoration: none;
   color: #007bff;
+  text-decoration: none;
 }
 
-.forgot-password a:hover {
+.forgot-password a:hover,
+.create-account-link:hover {
   color: #0056b3;
 }
 

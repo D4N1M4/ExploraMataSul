@@ -25,7 +25,6 @@ onAuthStateChanged(auth, (currentUser) => {
 
 // Carregar avaliações do local atual
 const loadReviews = async () => {
-  try {
     if (!locationId.value) return; // Verifica se o local está definido
 
     const q = query(
@@ -35,10 +34,6 @@ const loadReviews = async () => {
     const querySnapshot = await getDocs(q);
 
     reviews.value = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-  } catch (error) {
-    console.error("Erro ao carregar avaliações:", error);
-    alert("Não foi possível carregar as avaliações. Tente novamente mais tarde.");
-  }
 };
 
 // Adicionar nova avaliação
@@ -92,7 +87,7 @@ onMounted(() => {
 
     <!-- Mostrar mensagem se o usuário não estiver logado -->
     <div v-if="!user">
-      <p>Faça login para enviar uma avaliação.</p>
+      <p>Faça login para visualizar avaliações e avaliar o local.</p>
     </div>
 
     <!-- Formulário para adicionar avaliação -->
