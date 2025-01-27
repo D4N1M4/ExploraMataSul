@@ -2,29 +2,7 @@
 <footer>
     <div class="left-info">
     <h2>Explora Mata Sul</h2>
-    <p>MataSulPE, um lugar para todos! Um destino único, histórico e acolhedor</p>
-    <p>MUNICÍPIOS ABRANGIDOS PELA MICRORREGIÃO</p>
-    <div class="city-list">
-        <a href="#cidade1">Água Preta</a>
-        <a href="#cidade2">Amaraji</a>
-        <a href="#cidade3">Barreiros</a>
-        <a href="#cidade4">Belém de Maria</a>
-        <a href="#cidade4">Bonito</a>
-        <a href="#cidade1">Catende</a>
-        <a href="#cidade2">Cortês</a>
-        <a href="#cidade3">Gameleira</a>
-        <a href="#cidade4">Jaqueira</a>
-        <a href="#cidade1">Joaquim Nabuco</a>
-        <a href="#cidade2">Maraial</a>
-        <a href="#cidade3">Palmares</a>
-        <a href="#cidade4">Primavera</a>
-        <a href="#cidade1">Ribeirão</a>
-        <a href="#cidade2">Rio Formoso</a>
-        <a href="#cidade3">São Benedito do Sul</a>
-        <a href="#cidade4">São José da Coroa Grande</a>
-        <a href="#cidade1">Tamandaré</a>
-        <a href="#cidade2">Xexéu</a>
-    </div>
+    <p>Mata Sul-PE, um lugar para todos! Um destino único, histórico e acolhedor</p>
     </div>
     <div class="links">
           <ul>
@@ -44,100 +22,57 @@
 
 <style scoped>
 footer {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-background-color: #336247;
-color: #FFFFFF;
-padding: 20px 40px;
-position: relative;;
-bottom: 0;
-width: 100%;
-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #336247;
+  color: #FFFFFF;
+  padding:80px 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  left: 0;
 }
+
 footer .left-info {
-flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 2;
 }
+
 footer .left-info h2, footer .left-info p:first-of-type {
-font-size: 24px;
-margin-bottom: 5px;
-text-align: center;
-}
-footer .left-info .subtitle,
-.city-list {
-text-align: left;
-}
-footer .left-info .subtitle {
-margin-top: 10px;
-font-weight: bold;
-font-size: 14px;
-}
-footer .left-info p {
-margin: 5px 0;
-font-size: 16px;
-}
-.city-list {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-gap: 10px;
-margin-top: 10px;
-}
-.city-list a {
-color: #FFFFFF;
-text-decoration: none;
-transition: color 0.3s ease;
-text-align: left;
-}
-.city-list a:hover {
-color: #5de69a;
-}
-.right-info {
-margin-top: 55px;
-align-self: flex-start;
-text-align: left;
-}
-.right-info ul {
-list-style: none;
-padding: 0;
-margin: 0;
-text-align: right;
-display: flex;
-flex-direction: column;
-}
-.right-info li {
-margin: 5px 0;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.right-info a {
-color: #FFFFFF;
-text-decoration: none;
-transition: color 0.3s ease;
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinha ao fundo */
+  align-items: flex-end;     /* Alinha à direita */
+  position: absolute;        /* Para posicionar no rodapé */
+  bottom: 20px;              /* Distância do fundo */
+  right: 40px;               /* Distância da borda direita */
 }
 
-.right-info a:hover {
-color: #5de69a;
-}
-.copyright {
-text-align: center;
-font-size: 14px;
-color: #FFFFFF;
-margin-top: 10px;
-position: absolute;
-width: 100%;
-bottom: 0;
-left: 0;
-}
 .links ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  grid-gap: 1px;                        /* Espaço entre os itens */
 }
 
 .links li {
-  margin: 10px 0;
+  margin: 1px 0;
 }
 
 .links a {
-  font-size: 1rem;
+  font-size: 15px;
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
@@ -146,6 +81,17 @@ left: 0;
 .links a:hover {
   text-decoration: underline;
   color: #4CAF50;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 
 </style>

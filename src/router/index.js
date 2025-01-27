@@ -62,7 +62,6 @@ import ParoquiaSFA from "@/views/ParoquiaSFA.vue";
 import ParoquiaSJ from "@/views/ParoquiaSJ.vue";
 import PraiaBarraS from "@/views/PraiaBarraS.vue";
 import PraiaDaPedra from "@/views/PraiaDaPedra.vue";
-import PraiaDeSaoJoseDaCoroagrande from "@/views/PraiaDeSaoJoseDaCoroagrande.vue";
 import PraiaGravata from "@/views/PraiaGravata.vue";
 import PraiaGuadalupe from "@/views/PraiaGuadalupe.vue";
 import PraiaGuaiamum from "@/views/PraiaGuaiamum.vue";

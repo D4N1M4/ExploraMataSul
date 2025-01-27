@@ -1,16 +1,15 @@
 <script setup>
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
+import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
 </script>
 
 <template>
   <div id="litoral">
-    <NavBar />
+<NavBar />
+<BarraDePesquisa/>
 <main>
 <div class="area-visual">
-    <div class="pesquisa">
-        <input type="text" placeholder="Pesquise por cidade ou lugar." />
-    </div>
     <div class="imagem-banner">
         <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Litoral-20241218T011313Z-001/Litoral/Praia%20Porto%20de%20Nassau%20-%20Barreiros/porto-foto-01-1536x1024-1.png?raw=true" alt="Praia Porto de Nassau - Barreiros/Pe" />
         <div class="texto-banner">

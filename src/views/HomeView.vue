@@ -10,9 +10,6 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
 <BarraDePesquisa />
 <main>
 <div class="area-visual">
-    <div class="pesquisa">
-        <input type="text" placeholder="Pesquise por cidade ou lugar." />
-    </div>
     <div class="imagem-banner">
         <img src="../assets/jardimBotanico.jpg" alt="Imagem da região" />
         <div class="texto-banner">
@@ -137,30 +134,6 @@ main {
   text-align: right;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Barra de Pesquisa */
-.pesquisa {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 600px;
-  z-index: 10;
-  background-color: rgba(182, 252, 222, 0.8);
-  border-radius: 25px;
-  padding: 2px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pesquisa input {
-  width: 100%;
-  padding: 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Informações */

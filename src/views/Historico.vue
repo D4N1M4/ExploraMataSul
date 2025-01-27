@@ -1,6 +1,7 @@
 <script setup>
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
+import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
 </script>
 
 <template>
@@ -8,11 +9,9 @@ import NavBar from '../components/NavBar.vue';
     <NavBar />
     <div id="home">
 <NavBar />
+<BarraDePesquisa/>
 <main>
 <div class="area-visual">
-    <div class="pesquisa">
-        <input type="text" placeholder="Pesquise por cidade ou lugar." />
-    </div>
     <div class="imagem-banner">
         <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Igreja%20Matriz%20de%20S%C3%A3o%20Miguel%20Arcanjo-%20Barreiros/462586071_2946239275543677_3059116117920897614_n.jpg?raw=true" alt="Matriz de São Miguel Arcanjo" />
         <div class="texto-banner">
@@ -123,30 +122,6 @@ main {
   text-align: right;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Barra de Pesquisa */
-.pesquisa {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 600px;
-  z-index: 10;
-  background-color: rgba(182, 252, 222, 0.8);
-  border-radius: 25px;
-  padding: 2px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pesquisa input {
-  width: 100%;
-  padding: 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Informações */
