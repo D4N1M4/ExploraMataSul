@@ -108,6 +108,7 @@ p, a {
   gap: 15px;
   justify-content: center;
   margin-top: 40px;
+  margin: 100px auto 50px auto;
   padding: 20px;
 }
 

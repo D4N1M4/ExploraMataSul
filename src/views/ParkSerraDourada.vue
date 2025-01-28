@@ -63,7 +63,7 @@ const goToPage = (page) => {
       </button>
     </div>
     <div class="titulo">
-      <h1>Parque Serra Dourada</h1>
+      <h1>Park Serra Dourada</h1>
     </div>
 
     <section class="localizacao">
@@ -107,6 +107,7 @@ p, a {
   gap: 15px;
   justify-content: center;
   margin-top: 40px;
+  margin: 100px auto 50px auto;
   padding: 20px;
 }
 

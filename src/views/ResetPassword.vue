@@ -56,12 +56,14 @@ const resetPassword = async () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f3f4f6;
+  background-color: #325b51;
+  color: #ffffff;
   min-height: 100vh;
   padding: 20px;
 }
 
 .reset-password-form {
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 10px;

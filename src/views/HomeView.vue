@@ -65,8 +65,9 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
                 <p>
                     Você pode nos ajudar indicando locais incríveis na região! Sua sugestão pode aparecer em nosso site para ajudar outras pessoas a explorarem a Mata Sul Pernambucana.
                 </p>
-                <button class="botao-indicar">Indicar lugar</button>
-            </div>
+                <router-link to="/Indicar">Indicar</router-link>
+              </div>
+              
             <img src="../assets/tamandare.jpg" alt="Sugestão de local" class="imagem-secao"/>
         </div>
     </div>
@@ -221,7 +222,7 @@ main {
 .bloco .texto-lado a {
 background: transparent;
 color: #2d5238;
-padding: 6px 12px;
+padding: 6px 22px;
 border: 2px solid #2d5238;
 border-radius: 30px;
 font-size: 0.6rem;
@@ -237,24 +238,7 @@ background: linear-gradient(135deg, #4CAF50, #2d5238);
 box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
 transform: translateY(-2px);
 }
-.botao-indicar {
-  background: transparent;
-  color: #2d5238;
-  padding: 6px 12px;
-  border: 2px solid #2d5238;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.botao-indicar:hover {
-  background: linear-gradient(135deg, #4CAF50, #2d5238);
-  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
-}
 /* Responsividade */
 @media (max-width: 768px) {
   .pesquisa {

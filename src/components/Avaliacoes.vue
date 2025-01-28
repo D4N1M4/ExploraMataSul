@@ -175,6 +175,12 @@ form button {
   cursor: pointer;
 }
 
+form button:hover {
+  background: linear-gradient(135deg, #4CAF50, #2d5238);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
 .stars {
   font-size: 2rem;
   color: gray; /* Cor das estrelas cinzas */
