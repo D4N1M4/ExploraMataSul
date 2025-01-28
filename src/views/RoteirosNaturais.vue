@@ -25,7 +25,7 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
                     <p>
                       Para quem gosta do contato com a natureza, São Benedito do Sul é uma excelente pedida. Localizada na Mata Sul, pertinho do Recife, a 174 km, oferece muitas trilhas, banhos cachoeiras, visita a engenhos antigos e, a sua área urbana abriga edificações históricas, que o turista pode conhecer num city tour a pé por suas ruas. 
                     <br />
-                    <a href="#">Saber Mais</a>
+                    <router-link to="/CachoeiraBV">Saiba mais</router-link>
                     </p>
             </div>
             <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira Boa Vista - São Benedito do Sul/Cachoeira-Boa-Vista-4.webp" class="imagem-secao"/>
@@ -36,8 +36,8 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
                     <p>
                       A diversidade da natureza proporciona, a quem visita Tamandaré, um encontro inesquecível com a cachoeira Bulha D'água. A cachoeira está encravada numa área de preservação da Mata Atlântica nos limites da Reserva Biológica de Saltinho e possui altura aproximada de 10 metros e largura de 15 metros. A cachoeira é muito procurada pelos visitantes, e suas águas mantém uma temperatura que nunca ultrapassa os 15ºC. Ela já foi uma grande fonte de água mineral, e hoje ainda preserva águas límpidas com três quedas fortes que atraem o turista que deseja ter um contato cada vez mais intenso com a natureza.
                         <br />
-                        <a href="#">Saber Mais</a>
-                    </p>
+                        <router-link to="/CachoeiraBD">Saiba mais</router-link>
+                      </p>
             </div>
             <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira Bulha D'Água - Tamandaré/46674721Master.jpg " class="imagem-secao"/>
         </div>
@@ -47,7 +47,7 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
                     <p>                     
                       A caminhada da Peri-Peri é simples e acessível, com percurso de 480 metros, considerada de nível leve, com tempo de caminhada de 10 minutos, chegando a Cachoeira Peri-Peri. Essa é moleza demais. Andar por apenas 10 minutos e cair nas águas maravilhosas da cachoeira é TOP.
                       <br />
-                        <a href="#">Saber Mais</a>
+                      <router-link to="/CachoeiraPP">Saiba mais</router-link>
                     </p>
             </div>
             <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira Peri Peri - São Benedito do Sul/1__mg_9136-17058192.webp" class="imagem-secao"/>

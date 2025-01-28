@@ -143,6 +143,7 @@ async function createAccount() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 100px auto 50px auto;
   min-height: 100vh;
   background-color: #325b51;
 }

@@ -69,6 +69,7 @@ import PraiaPN from "@/views/PraiaPN.vue";
 import SerraDoEspelho from "@/views/SerraDoEspelho.vue";
 import VitoriaPS from "@/views/VitoriaPS.vue";
 import IgrejaNSP from "@/views/IgrejaNSP.vue";
+import Indicar from "@/views/Indicar.vue";
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -142,6 +143,7 @@ const routes = [
   { path: "/PraiaPN", name: "Praia Porto de Nassau",component: PraiaPN, meta: { city: "Barreiros", category: "Litoral" }},
   { path: "/SerraDoEspelho", name: "Serra Do Espelho",component: SerraDoEspelho,meta: { city: "Jaqueira", category: "Roteiros Naturais" }},
   { path: "/VitoriaPS", name: "Vitoria Park Shopping",component: VitoriaPS, meta: { city: "Vitória de Santo Antão", category: "Lazer" }},
+  { path: "/Indicar", name: "Indicar",component: Indicar},
 
 ];
 
