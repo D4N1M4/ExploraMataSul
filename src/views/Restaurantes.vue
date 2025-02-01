@@ -62,7 +62,7 @@ const filtrarRestaurantes = async () => {
   <main>
     <div class="area-visual">
       <div class="imagem-banner">
-        <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Igreja%20Matriz%20de%20S%C3%A3o%20Miguel%20Arcanjo-%20Barreiros/462586071_2946239275543677_3059116117920897614_n.jpg?raw=true" alt="Matriz de São Miguel Arcanjo" />
+        <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Restaurantes/parrilha%20Prime/Screenshot_20250129_021304_Instagram.jpg?raw=true" />
         <div class="texto-banner">
           <div class="restaurantes">Restaurantes Mais Bem Avaliados</div>
         </div>

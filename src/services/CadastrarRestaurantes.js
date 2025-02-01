@@ -8,7 +8,7 @@ categoria: "Restaurante",
 cidade: "Palmares",
 informacoes: "Restaurante com comidas típicas da região.",
 mapUrl: "https://maps.app.goo.gl/SdUF42GgLzdMhN4u6",
-imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20Peri%20Peri%20-%20S%C3%A3o%20Benedito%20do%20Sul/1__mg_9136-17058192.webp", ""],
+imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20Peri%20Peri%20-%20S%C3%A3o%20Benedito%20do%20Sul/1__mg_9136-17058192.webp"],
 nicho: 1
 },
 {
@@ -17,7 +17,7 @@ nicho: 1
     cidade: "Gameleira",
     informacoes: "Restaurante com comidas típicas da região.",
     mapUrl: "https://maps.app.goo.gl/SdUF42GgLzdMhN4u6",
-    imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20Peri%20Peri%20-%20S%C3%A3o%20Benedito%20do%20Sul/1__mg_9136-17058192.webp", ""],
+    imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20Peri%20Peri%20-%20S%C3%A3o%20Benedito%20do%20Sul/1__mg_9136-17058192.webp"],
     nicho: 2
     },
     {
@@ -26,7 +26,7 @@ nicho: 1
         cidade: "Palmares",
         informacoes: "Restaurante com comidas típicas da região.",
         mapUrl: "https://maps.app.goo.gl/SdUF42GgLzdMhN4u6",
-        imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20Peri%20Peri%20-%20S%C3%A3o%20Benedito%20do%20Sul/1__mg_9136-17058192.webp", ""],
+        imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/roteiros-naturais/Cachoeira%20Peri%20Peri%20-%20S%C3%A3o%20Benedito%20do%20Sul/1__mg_9136-17058192.webp"],
         nicho: 5
         },
 ];
