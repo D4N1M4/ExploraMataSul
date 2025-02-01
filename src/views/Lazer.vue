@@ -54,6 +54,9 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
             </div>
             <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Lazer-20241218T011618Z-001/Lazer/Orla%20de%20Palmares/maxresdefault.jpg?raw=true" alt="Orla de Palmares" class="imagem-secao"/>
         </div>
+        <div class="ver-todos">
+          <router-link to="/Lazeres">Ver Todos</router-link>
+        </div>
     </div>
 </section>
 </main>
@@ -278,4 +281,33 @@ p, a, .texto-lado p {
   font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
 }
+
+.ver-todos {
+    display: flex; /* Corrigido */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 10px; /* Ajusta espaçamento */
+    margin: 10px 0;
+}
+
+.ver-todos a {
+    background: #2d5238;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.ver-todos a:hover {
+    background: linear-gradient(135deg, #4CAF50, #2d5238);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
 </style>
