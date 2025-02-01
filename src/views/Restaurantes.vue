@@ -5,6 +5,7 @@ import { onMounted, ref } from "vue";
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
 
+
 const restaurantes = ref([]);
 const restaurantesPorNicho = ref({});
 const busca = ref("");

@@ -1,5 +1,5 @@
-import { db } from "@/firebaseConfig";
 import { addDoc, collection, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore";
+import { db } from "../firebase.js";
 
 class FirestoreDAO {
 
