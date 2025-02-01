@@ -23,6 +23,7 @@ import EducandarioSJ from "@/views/EducandarioSJ.vue";
 import EngenhoMorim from '@/views/EngenhoMorim.vue';
 import Forte from "@/views/Forte.vue";
 import Historico from "@/views/Historico.vue";
+import Historicos from "@/views/Historicos.vue";
 import HomeView from "@/views/HomeView.vue";
 import HotelFazenda from "@/views/HotelFazenda.vue";
 import IgrejaNSD from "@/views/IgrejaNSD.vue";
@@ -32,6 +33,8 @@ import IgrejaSBSJ from "@/views/IgrejaSBSJ.vue";
 import IlhaSantoAleixo from "@/views/IlhaSantoAleixo.vue";
 import Indicar from "@/views/Indicar.vue";
 import Lazer from "@/views/Lazer.vue";
+import Lazeres from "@/views/Lazeres.vue";
+import Litorais from "@/views/Litorais.vue";
 import Litoral from "@/views/Litoral.vue";
 import Login from "@/views/Login.vue";
 import MatrizNSC from "@/views/MatrizNSC.vue";
@@ -66,6 +69,7 @@ import Restaurantes from "@/views/Restaurantes.vue";
 import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
 import SerraDoEspelho from "@/views/SerraDoEspelho.vue";
 import TeatroApolo from '@/views/TeatroApolo.vue';
+import TodosRN from "@/views/TodosRN.vue";
 import UsinaCatende from "@/views/UsinaCatende.vue";
 import UsinaST from "@/views/UsinaST.vue";
 import VitoriaPS from "@/views/VitoriaPS.vue";
@@ -144,7 +148,10 @@ const routes = [
   { path: "/SerraDoEspelho", name: "Serra Do Espelho",component: SerraDoEspelho,meta: { city: "Jaqueira", category: "Roteiros Naturais" }},
   { path: "/VitoriaPS", name: "Vitoria Park Shopping",component: VitoriaPS, meta: { city: "Vitória de Santo Antão", category: "Lazer" }},
   { path: "/Indicar", name: "Indicar",component: Indicar},
-
+  { path: "/Historicos", name: "Historicos",component: Historicos},
+  { path: "/Lazeres", name: "Lazeres",component: Lazeres},
+  { path: "/TodosRN", name: "TodosRN",component: TodosRN},
+  { path: "/Litorais", name: "Litorais",component: Litorais},
 ];
 
 const router = createRouter({

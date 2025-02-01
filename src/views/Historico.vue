@@ -1,67 +1,87 @@
-<script setup>
-import Footer from '../components/Footer.vue';
-import NavBar from '../components/NavBar.vue';
-import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
-</script>
-
 <template>
   <div id="historico">
     <NavBar />
     <div id="home">
-<NavBar />
-<BarraDePesquisa/>
-<main>
-<div class="area-visual">
-    <div class="imagem-banner">
-        <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Igreja%20Matriz%20de%20S%C3%A3o%20Miguel%20Arcanjo-%20Barreiros/462586071_2946239275543677_3059116117920897614_n.jpg?raw=true" alt="Matriz de São Miguel Arcanjo" />
-        <div class="texto-banner">
-        <div class="historico">Pontos Históricos</div>
-        </div>
-    </div>
-    </div>
-    <section class="informacoes">
-    <div class="blocos-container">
-        <div class="bloco">
-            <div class="texto-lado">
-                <h2>Museu do Una</h2>
-                    <p>
-                      Localizado no distrito de Várzea do Una, foi fundado em 22 de abril de 2000 por Bertrando Bernardino, com o objetivo de servir de abrigo e preservação da cultura regional e meio ambiente.
-                    <br />
-                    <router-link to="/MuseuDoUna">Saiba mais</router-link>
-                  </p>
+      <BarraDePesquisa />
+      <main>
+        <div class="area-visual">
+          <div class="imagem-banner">
+            <img 
+              src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Igreja%20Matriz%20de%20S%C3%A3o%20Miguel%20Arcanjo-%20Barreiros/462586071_2946239275543677_3059116117920897614_n.jpg?raw=true" 
+              alt="Matriz de São Miguel Arcanjo" 
+            />
+            <div class="texto-banner">
+              <div class="historico">Pontos Históricos</div>
             </div>
-            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Museu%20do%20Una%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/museu-do-una%20(1).jpg?raw=true" class="imagem-secao" />
+          </div>
         </div>
-        <div class="bloco">
-            <div class="texto-lado">
-                <h2>Engenho Morim</h2>
-                    <p>
-                      Fundado no século XVIII, pela Baronesa de Gindahy, e está localizado
-                      a cerca de 6 km da rodovia PE-060.
-                        <br />
-                        <router-link to="/EngenhoMorim">Saiba mais</router-link>
-                    </p>
+        <section class="informacoes">
+          <div class="blocos-container">
+            <div class="bloco" v-for="lugar in lugares" :key="lugar.nome">
+              <div class="texto-lado">
+                <h2>{{ lugar.nome }}</h2>
+                <p>
+                  {{ lugar.descricao }}
+                  <br />
+                  <router-link :to="lugar.link">Saiba mais</router-link>
+                </p>
+              </div>
+              <img :src="lugar.imagem" :alt="lugar.nome" class="imagem-secao" />
             </div>
-            <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Engenho%20Morim%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/WhatsApp-Image-2021-08-05-at-12.00.39.jpeg?raw=true" alt="Engenho Morim" class="imagem-secao" />
+          </div>
+        </section>
+        <div class="ver-todos">
+          <router-link to="/Historicos">Ver Todos</router-link>
         </div>
-        <div class="bloco">
-            <div class="texto-lado">
-                <h2>Cine Teatro Apolo</h2>
-                    <p>
-                      O Cine-Teatro Apollo foi inaugurado em 1914, construído com o propósito de atender às atividades culturais, que na época eram desenvolvidas e ganhavam espaço na sociedade local, vindo a representar para a região um bem cultural que poucas cidades do interior possuíam.
-                        <br />
-                        <router-link to="/TeatroApolo">Saiba mais</router-link>
-                    </p>
-            </div>
-            <img src="https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Cine%20Teatro%20Apolo%20-%20Palmares/fachada_cine_teatro.webp" alt="Cine Teatro Apolo" class="imagem-secao"/>
-        </div>
+      </main>
     </div>
-</section>
-</main>
-</div>
     <Footer />
   </div>
 </template>
+
+<script>
+import Footer from '../components/Footer.vue';
+import NavBar from '../components/NavBar.vue';
+import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
+
+export default {
+  components: {
+    NavBar,
+    Footer,
+    BarraDePesquisa
+  },
+  data() {
+    return {
+      lugares: [
+      {
+          nome: "",
+          descricao: "Localizado no distrito de Várzea do Una, foi fundado em 22 de abril de 2000 por Bertrando Bernardino, com o objetivo de servir de abrigo e preservação da cultura regional e meio ambiente.",
+          imagem: "https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Museu%20do%20Una%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/museu-do-una%20(1).jpg?raw=true",
+          link: "/MuseuDoUna"
+        },
+        {
+          nome: "Museu do Una",
+          descricao: "Localizado no distrito de Várzea do Una, foi fundado em 22 de abril de 2000 por Bertrando Bernardino, com o objetivo de servir de abrigo e preservação da cultura regional e meio ambiente.",
+          imagem: "https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Museu%20do%20Una%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/museu-do-una%20(1).jpg?raw=true",
+          link: "/MuseuDoUna"
+        },
+        {
+          nome: "Engenho Morim",
+          descricao: "Fundado no século XVIII, pela Baronesa de Gindahy, e está localizado a cerca de 6 km da rodovia PE-060.",
+          imagem: "https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Engenho%20Morim%20-%20S%C3%A3o%20Jos%C3%A9%20da%20Coroa%20Grande/WhatsApp-Image-2021-08-05-at-12.00.39.jpeg?raw=true",
+          link: "/EngenhoMorim"
+        },
+        {
+          nome: "Cine Teatro Apolo",
+          descricao: " O Cine-Teatro Apollo foi inaugurado em 1914, construído com o propósito de atender às atividades culturais, que na época eram desenvolvidas e ganhavam espaço na sociedade local, vindo a representar para a região um bem cultural que poucas cidades do interior possuíam.",
+          imagem: "https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/refs/heads/main/Hist%C3%B3ricos-20241218T011238Z-001/Hist%C3%B3ricos/Cine%20Teatro%20Apolo%20-%20Palmares/fachada_cine_teatro.webp",
+          link: "/TeatroApolo"
+        }
+      ]
+    };
+  }
+};
+</script>
 
 <style scoped>
 /* Resets e Elementos Globais */
@@ -280,7 +300,7 @@ footer {
   background-color: #2d5238;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 80px;
 }
 
 /* Fontes Globais */
@@ -292,6 +312,39 @@ h1, h2, h3, .historico, .texto-lado h2 {
 p, a, .texto-lado p {
   font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
+}
+.botao-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.ver-todos {
+    display: flex; /* Corrigido */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 10px; /* Ajusta espaçamento */
+    margin: 10px 0;
+}
+
+.ver-todos a {
+    background: #2d5238;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.ver-todos a:hover {
+    background: linear-gradient(135deg, #4CAF50, #2d5238);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 </style>

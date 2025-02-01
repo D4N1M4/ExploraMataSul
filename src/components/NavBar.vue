@@ -158,7 +158,6 @@ export default {
   border-radius: 25px / 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: right;
-  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
