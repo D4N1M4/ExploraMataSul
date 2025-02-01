@@ -8,6 +8,17 @@ super();
 this.colecao = "restaurantes";
 }
 
+async adicionarRestaurante(restaurante) {
+try {
+    const id = await this.addDocument(this.colecao, restaurante);
+    console.log("Restaurante adicionado com sucesso! ID:", id);
+    return id;
+} catch (error) {
+    console.error("Erro ao adicionar restaurante:", error);
+    throw new Error("Erro ao adicionar restaurante");
+}
+}
+
 async getAllRestaurantes() {
     try {
     const restaurantesSnapshot = await getDocs(collection(db, this.colecao));

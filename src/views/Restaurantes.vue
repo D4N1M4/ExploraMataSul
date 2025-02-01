@@ -1,53 +1,63 @@
 <script setup>
 import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
-import { collection, getDocs } from "firebase/firestore";
-import { computed, onMounted, ref } from "vue";
+import RestauranteDAO from '@/services/RestauranteDAO';
+import { onMounted, ref } from "vue";
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
-import { db } from "../firebase";
 
 const restaurantes = ref([]);
+const restaurantesPorNicho = ref({});
+const busca = ref("");
 
-// Função para carregar os restaurantes e calcular a média de avaliações
-const loadRestaurantes = async () => {
-  const querySnapshot = await getDocs(collection(db, "reviews"));
-  
-  const avaliacaoMap = {};
-
-  querySnapshot.forEach((doc) => {
-    const review = doc.data();
-    const { locationId, rating } = review;
-
-    if (!avaliacaoMap[locationId]) {
-      avaliacaoMap[locationId] = { totalRating: 0, count: 0 };
-    }
-
-    avaliacaoMap[locationId].totalRating += rating;
-    avaliacaoMap[locationId].count += 1;
-  });
-
-  restaurantes.value = Object.keys(avaliacaoMap).map((locationId) => ({
-    locationId,
-    mediaAvaliacao: avaliacaoMap[locationId].totalRating / avaliacaoMap[locationId].count,
-  }));
+const nichoMap = {
+  1: "Regional",
+  2: "Doceria e Cafeteria",
+  3: "Pizzaria e Hamburgueria",
+  4: "GastroBar",
+  5: "Churrascaria"
 };
 
-// Computar os top 10 restaurantes
-const topRestaurantes = computed(() => {
-  return restaurantes.value
-    .sort((a, b) => b.mediaAvaliacao - a.mediaAvaliacao)
-    .slice(0, 10);
-});
+const restauranteDAO = new RestauranteDAO();
 
-onMounted(() => {
-  loadRestaurantes();
-});
-</script>
+const carregarRestaurantes = async () => {
+  try {
+    const todosRestaurantes = await restauranteDAO.getAllRestaurantes();
+    const agrupados = {};
+    todosRestaurantes.forEach((restaurante) => {
+      const chave = restaurante.nicho;
+      if (!agrupados[chave]) {
+        agrupados[chave] = [];
+      }
+      agrupados[chave].push(restaurante);
+    });
+    restaurantes.value = todosRestaurantes;
+    restaurantesPorNicho.value = agrupados;
+  } catch (error) {
+    console.error("Erro ao carregar restaurantes:", error);
+  }
+};
+
+onMounted(carregarRestaurantes);
+
+const filtrarRestaurantes = async () => {
+  if (busca.value.trim() === "") {
+    carregarRestaurantes();
+    return;
+  }
+  const termo = busca.value.toLowerCase();
+  restaurantesPorNicho.value = Object.keys(restaurantesPorNicho.value).reduce((acc, chave) => {
+    acc[chave] = restaurantes.value.filter(
+      (r) => r.nicho == chave && r.nome.toLowerCase().includes(termo)
+    );
+    return acc;
+  }, {});
+};
+  </script>
 
 <template>
 <div id="restaurantes">
   <NavBar />
-  <BarraDePesquisa/>
+  <BarraDePesquisa v-model="busca" @input="filtrarRestaurantes"/>
   <main>
     <div class="area-visual">
       <div class="imagem-banner">
@@ -57,7 +67,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <section class="restaurantes-avaliados">
+    <!--<section class="restaurantes-avaliados">
       <div class="restaurante" v-for="restaurante in topRestaurantes" :key="restaurante.locationId">
         <router-link :to="{ name: 'RestauranteDetalhe', params: { id: restaurante.locationId } }">
           <img :src="`/path/to/restaurante/images/${restaurante.locationId}.jpg`" :alt="restaurante.locationId" />
@@ -67,7 +77,19 @@ onMounted(() => {
           </div>
         </router-link>
       </div>
-    </section>
+    </section>-->
+    <section v-for="(restaurantesDoNicho, chave) in restaurantesPorNicho" :key="chave" class="nicho-section">
+        <h2 class="nicho-titulo">{{ nichoMap[chave] }}</h2>
+        <div class="restaurantes-lista">
+          <div class="restaurante" v-for="restaurante in restaurantesDoNicho" :key="restaurante.id">
+            <router-link :to="{ name: 'RestauranteDetalhe', params: { id: restaurante.id } }">
+              <div class="informacoes">
+                <h3>{{ restaurante.nome }}</h3>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </section>
   </main>
   <Footer/>
 </div>
@@ -134,23 +156,26 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.restaurantes-avaliados {
+.nicho-section {
+  margin: 20px;
+}
+
+.nicho-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.restaurantes-lista {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
 }
 
 .restaurante {
   width: 200px;
   margin: 10px;
   text-align: center;
-}
-
-.restaurante img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
 }
 
 .informacoes {
@@ -160,10 +185,6 @@ main {
 .informacoes h3 {
   font-size: 18px;
   font-weight: bold;
-}
-
-.informacoes p {
-  margin: 5px 0;
 }
 footer {
   background-color: #2d5238;

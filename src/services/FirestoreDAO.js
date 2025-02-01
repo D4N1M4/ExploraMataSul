@@ -1,7 +1,19 @@
 import { db } from "@/firebaseConfig";
-import { collection, doc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore";
 
 class FirestoreDAO {
+
+    async addDocument(colecao, dados) {
+        try {
+            const docRef = await addDoc(collection(db, colecao), dados);
+            console.log(`${colecao.charAt(0).toUpperCase() + colecao.slice(1)} adicionado com sucesso! ID: ${docRef.id}`);
+            return docRef.id;
+        } catch (error) {
+            console.error(`Erro ao adicionar ${colecao}: `, error);
+            throw new Error(`Erro ao adicionar ${colecao}`);
+        }
+    }
+
     async getAllLocais() {
         try {
             const locaisSnapshot = await getDocs(collection(db, 'locais'));
@@ -23,6 +35,7 @@ class FirestoreDAO {
         throw new Error('Erro ao obter locais');
         }
     }
+
 async getLocalById(id) {
     try {
         const localDoc = await getDoc(doc(db, 'locais', id));
@@ -36,6 +49,7 @@ async getLocalById(id) {
         throw new Error('Erro ao obter local');
     }
     }
+
 async getLocaisByCategoria(categoria) {
     try {
         const locaisRef = collection(db, 'locais');
@@ -58,16 +72,6 @@ async getLocaisByCategoria(categoria) {
     } catch (error) {
         console.error('Erro ao obter locais por categoria: ', error);
         throw new Error('Erro ao obter locais por categoria');
-    }
-    }
-    async addLocal(local) {
-        try {
-        const novoDoc = doc(collection(db, 'locais'));
-        await setDoc(novoDoc, local);
-        console.log('Local adicionado com sucesso!');
-    } catch (error) {
-        console.error('Erro ao adicionar local: ', error);
-        throw new Error('Erro ao adicionar local');
     }
     }
 

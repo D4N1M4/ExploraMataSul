@@ -65,6 +65,7 @@ import PraiaGuaiamum from "@/views/PraiaGuaiamum.vue";
 import PraiaPN from "@/views/PraiaPN.vue";
 import PraiaVU from "@/views/PraiaVU.vue";
 import ResetPassword from "@/views/ResetPassword.vue";
+import RestauranteDetalhe from '@/views/RestauranteDetalhe.vue';
 import Restaurantes from "@/views/Restaurantes.vue";
 import RoteirosNaturais from "@/views/RoteirosNaturais.vue";
 import SerraDoEspelho from "@/views/SerraDoEspelho.vue";
@@ -152,6 +153,13 @@ const routes = [
   { path: "/Lazeres", name: "Lazeres",component: Lazeres},
   { path: "/TodosRN", name: "TodosRN",component: TodosRN},
   { path: "/Litorais", name: "Litorais",component: Litorais},
+
+  {
+    path: '/restaurante/:id',
+    name: 'RestauranteDetalhe',
+    component: RestauranteDetalhe,
+    props: true
+  }
 ];
 
 const router = createRouter({
@@ -160,4 +168,3 @@ const router = createRouter({
 });
 
 export default router;
- 
