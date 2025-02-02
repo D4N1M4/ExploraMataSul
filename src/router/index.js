@@ -75,6 +75,7 @@ import UsinaST from "@/views/UsinaST.vue";
 import VitoriaPS from "@/views/VitoriaPS.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import RestauranteDetalhe from '../components/RestauranteDetalhe.vue';
+import NossaRegiao from "@/views/NossaRegiao.vue";
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -82,7 +83,7 @@ const routes = [
   { path: "/Restaurantes", name:"Restaurantes", component: Restaurantes },
   { path: "/RoteirosNaturais", name:"RoteirosNaturais", component: RoteirosNaturais },
   { path: "/Litoral", name:"Litoral", component: Litoral },
-  { path: "/NossaRegiao", name:"NossaRegiao", component: HomeView },
+  { path: "/NossaRegiao", name:"NossaRegiao", component: NossaRegiao },
   { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande", name:"Praia De São José Da Coroa Grande", component: PraiaDeSaoJoseDaCoroaGrande, meta: { city: "São José da Coroa Grande", category: "Litoral" }},
   { path: "/Litoral/Praia-De-Sao-Jose-Da-Coroa-Grande/Avaliacao", name:"Avaliacao", component: Avaliacao },
   { path: "/HotelFazenda", name:"Hotel Fazenda", component: HotelFazenda,  meta: { city: "Bonito", category: "Lazer" }},
