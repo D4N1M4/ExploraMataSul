@@ -13,7 +13,7 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
     <div class="imagem-banner">
         <img src="../assets/jardimBotanico.jpg" alt="Imagem da região" />
         <div class="texto-banner">
-        <div class="nossa-regiao">Nossa Região</div>
+        <div class="nossa-regiao">Home</div>
         </div>
     </div>
     </div>
@@ -65,7 +65,9 @@ import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
                 <p>
                     Você pode nos ajudar indicando locais incríveis na região! Sua sugestão pode aparecer em nosso site para ajudar outras pessoas a explorarem a Mata Sul Pernambucana.
                 </p>
+                <div class="indicar">
                 <router-link to="/Indicar">Indicar</router-link>
+                </div>
               </div>
               
             <img src="../assets/tamandare.jpg" alt="Sugestão de local" class="imagem-secao"/>
@@ -237,6 +239,16 @@ width: fit-content;
 background: linear-gradient(135deg, #4CAF50, #2d5238);
 box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
 transform: translateY(-2px);
+}
+
+.indicar {
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Responsividade */
