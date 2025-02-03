@@ -4,7 +4,7 @@ import FirestoreDAO from "./FirestoreDAO.js";
 const restaurantes = [
 {
 nome: "Vaso de Alabasto",
-categoria: "Restaurante",
+categoria: "Regional",
 cidade: "Palmares",
 informacoes: "Restaurante com comidas típicas da região.",
 mapUrl: "https://maps.app.goo.gl/SdUF42GgLzdMhN4u6",
@@ -15,7 +15,7 @@ imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/re
 },
 {
     nome: "Keylla Sweets",
-    categoria: "Restaurante",
+    categoria: "Doceria",
     cidade: "Gameleira",
     informacoes: "Restaurante com comidas típicas da região.",
     mapUrl: "https://maps.app.goo.gl/SdUF42GgLzdMhN4u6",
@@ -26,7 +26,7 @@ imagens: ["https://raw.githubusercontent.com/evellysilva/explora_mataSul-imgs/re
     },
     {
         nome: "Parrilha Prime",
-        categoria: "Restaurante",
+        categoria: "Churrascaria",
         cidade: "Palmares",
         informacoes: "Restaurante com comidas típicas da região.",
         mapUrl: "https://maps.app.goo.gl/SdUF42GgLzdMhN4u6",

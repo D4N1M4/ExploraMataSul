@@ -1,32 +1,30 @@
 <script setup>
-import { computed } from 'vue';
+if (typeof require !== 'function') {
+var require = function(module) {
+};
+}
 
+import { computed } from 'vue';
 const props = defineProps({
 nome: {
 type: String,
-required: true
+import: true
 },
 imagens: {
 type: Array,
-required: false,
+requered: false,
 default: () => []
 },
 categoria: {
 type: String,
-required: true
+requered: true
 },
 });
 
 const maxLength = 100;
 
-const truncatedInformacoes = computed(() => {
-return props.informacoes && props.informacoes.length > maxLength
-? props.informacoes.substring(0, maxLength) + '...'
-: props.informacoes;
-});
-
 const fullImageUrl = computed(() => {
-return props.imagens.length > 0 ? props.imagens[0] : require('../assets/localSemImagem.jpg');
+return props.imagens.length > 0 ? props.imagens[0] : require('../assets/logosite.png');
 });
 </script>
 <template>
