@@ -1,4 +1,5 @@
 import Register from "@/components/Register.vue";
+import RestauranteCard from "@/components/RestauranteCard.vue";
 import Avaliacao from "@/views/Avaliacao.vue";
 import BananalEcoPark from "@/views/BananalEcoPark.vue";
 import BeatrizPark from "@/views/BeatrizPark.vue";
@@ -47,6 +48,7 @@ import MinaDaPedra from "@/views/MinaDaPedra.vue";
 import MinasEcoPark from "@/views/MinasEcoPark.vue";
 import MuseuDoUna from '@/views/MuseuDoUna.vue';
 import MuseuE from "@/views/MuseuE.vue";
+import NossaRegiao from "@/views/NossaRegiao.vue";
 import OrlaPalmares from "@/views/OrlaPalmares.vue";
 import ParkSerraDourada from "@/views/ParkSerraDourada.vue";
 import ParoquiaSFA from "@/views/ParoquiaSFA.vue";
@@ -75,7 +77,7 @@ import UsinaST from "@/views/UsinaST.vue";
 import VitoriaPS from "@/views/VitoriaPS.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import RestauranteDetalhe from '../components/RestauranteDetalhe.vue';
-import NossaRegiao from "@/views/NossaRegiao.vue";
+import FirestoreDAO from '../services/FirestoreDAO';
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -154,13 +156,11 @@ const routes = [
   { path: "/Lazeres", name: "Lazeres",component: Lazeres},
   { path: "/TodosRN", name: "TodosRN",component: TodosRN},
   { path: "/Litorais", name: "Litorais",component: Litorais},
+  { path: '/restaurantesCard', name: 'RestaurantesCard', component: RestauranteCard },
+  { path: '/servicos', name: 'Servicos', component: FirestoreDAO },
+  {path:'/restaurante/:slug/:id', name:"DetalheRestaurante" ,component: RestauranteDetalhe},
+  {path:'/firestoreDAO', name:"firestoreDAO" ,component: FirestoreDAO},
 
-  {
-    path: '/restaurante/:id',
-    name: 'RestauranteDetalhe',
-    component: RestauranteDetalhe,
-    props: true
-  }
 ];
 
 const router = createRouter({

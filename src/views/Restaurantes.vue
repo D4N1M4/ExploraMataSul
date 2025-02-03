@@ -1,64 +1,80 @@
 <script setup>
 import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
-import RestauranteDAO from '@/services/RestauranteDAO';
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
-
+import RestauranteCard from '../components/RestauranteCard.vue';
+import FirestoreDAO from '../services/FirestoreDAO';
 
 const restaurantes = ref([]);
-const restaurantesPorNicho = ref({});
 const busca = ref("");
+const currentPage = ref(1);
+const pageSize = ref(10);
+const restauranteDAO= new FirestoreDAO();
 
-const nichoMap = {
-  1: "Regional",
-  2: "Doceria e Cafeteria",
-  3: "Pizzaria e Hamburgueria",
-  4: "GastroBar",
-  5: "Churrascaria"
-};
+const restaurantesFiltrados = computed(() => {
+  return restaurantes.value.filter(restaurante =>
+    restaurante.nome.toLowerCase().includes(busca.value.toLowerCase())
+  );
+});
 
-const restauranteDAO = new RestauranteDAO();
+const totalPages = computed(() => Math.ceil(restaurantesFiltrados.value.length / pageSize.value));
 
-const carregarRestaurantes = async () => {
+const paginatedRestaurantes = computed(() => {
+  const start = (currentPage.value - 1) * pageSize.value;
+  const end = start + pageSize.value;
+  return restaurantesFiltrados.value.slice(start, end);
+});
+
+const pagesToShow = computed(() => {
+  const startPage = Math.max(currentPage.value - 1, 1);
+  const endPage = Math.min(currentPage.value + 1, totalPages.value);
+  const pages = [];
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
+  return pages;
+});
+
+const getRestaurantes = async () => {
   try {
-    const todosRestaurantes = await restauranteDAO.getAllRestaurantes();
-    const agrupados = {};
-    todosRestaurantes.forEach((restaurante) => {
-      const chave = restaurante.nicho;
-      if (!agrupados[chave]) {
-        agrupados[chave] = [];
-      }
-      agrupados[chave].push(restaurante);
-    });
-    restaurantes.value = todosRestaurantes;
-    restaurantesPorNicho.value = agrupados;
+    restaurantes.value = await restauranteDAO.getAll();
   } catch (error) {
-    console.error("Erro ao carregar restaurantes:", error);
+    console.error("Erro ao buscar restaurantes:", error);
   }
 };
 
-onMounted(carregarRestaurantes);
-
-const filtrarRestaurantes = async () => {
-  if (busca.value.trim() === "") {
-    carregarRestaurantes();
-    return;
-  }
-  const termo = busca.value.toLowerCase();
-  restaurantesPorNicho.value = Object.keys(restaurantesPorNicho.value).reduce((acc, chave) => {
-    acc[chave] = restaurantes.value.filter(
-      (r) => r.nicho == chave && r.nome.toLowerCase().includes(termo)
-    );
-    return acc;
-  }, {});
+const detalharRestaurante = (id) => {
+  router.push({ name: 'RestauranteDetalhe', params: { id } });
 };
+
+const changePage = (page) => {
+  if (page >= 1 && page <= totalPages.value) {
+    currentPage.value = page;
+  }
+};
+
+const previousPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+  }
+};
+
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+  }
+};
+
+onMounted(() => {
+  getRestaurantes();
+});
   </script>
 
 <template>
 <div id="restaurantes">
   <NavBar />
-  <BarraDePesquisa v-model="busca" @input="filtrarRestaurantes"/>
+  <BarraDePesquisa/>
   <main>
     <div class="area-visual">
       <div class="imagem-banner">
@@ -68,27 +84,28 @@ const filtrarRestaurantes = async () => {
         </div>
       </div>
     </div>
-    <!--<section class="restaurantes-avaliados">
-      <div class="restaurante" v-for="restaurante in topRestaurantes" :key="restaurante.locationId">
-        <router-link :to="{ name: 'RestauranteDetalhe', params: { id: restaurante.locationId } }">
-          <img :src="`/path/to/restaurante/images/${restaurante.locationId}.jpg`" :alt="restaurante.locationId" />
-          <div class="informacoes">
-            <h3>{{ restaurante.locationId }}</h3>
-            <p>Avaliação: {{ restaurante.mediaAvaliacao.toFixed(1) }} ⭐</p>
-          </div>
-        </router-link>
-      </div>
-    </section>-->
-    <section v-for="(restaurantesDoNicho, chave) in restaurantesPorNicho" :key="chave" class="nicho-section">
-        <h2 class="nicho-titulo">{{ nichoMap[chave] }}</h2>
-        <div class="restaurantes-lista">
-          <div class="restaurante" v-for="restaurante in restaurantesDoNicho" :key="restaurante.id">
-            <router-link :to="{ name: 'RestauranteDetalhe', params: { id: restaurante.id } }">
-              <div class="informacoes">
-                <h3>{{ restaurante.nome }}</h3>
-              </div>
-            </router-link>
-          </div>
+    <section class="restaurantes-section">
+        <div class="card-grid">
+          <RestauranteCard
+            v-for="restaurante in paginatedRestaurantes"
+            :key="restaurante.id"
+            :titulo="restaurante.nome"
+            :descricao="restaurante.informacoes"
+            :image-src="restaurante.imagens.length > 0 ? restaurante.imagens[0] : ''"
+            @click="detalharRestaurante(restaurante.id)"
+          />
+        </div>
+        <div class="pagination">
+          <button @click="previousPage" :disabled="currentPage === 1">Anterior</button>
+          <button
+            v-for="page in pagesToShow"
+            :key="page"
+            @click="changePage(page)"
+            :class="{ active: currentPage === page }"
+          >
+            {{ page }}
+          </button>
+          <button @click="nextPage" :disabled="currentPage === totalPages">Próximo</button>
         </div>
       </section>
   </main>
@@ -97,7 +114,7 @@ const filtrarRestaurantes = async () => {
 </template>
 
 <style scoped>
-/* Resets e Elementos Globais */
+
 * {
   margin: 0;
   padding: 0;
@@ -157,35 +174,39 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nicho-section {
-  margin: 20px;
+.restaurantes-section {
+  padding: 20px;
 }
 
-.nicho-titulo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
-
-.restaurantes-lista {
+.pagination {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
 }
 
-.restaurante {
-  width: 200px;
-  margin: 10px;
-  text-align: center;
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.informacoes {
-  margin-top: 10px;
+.pagination button.active,
+.pagination button:hover {
+  background-color: #ccc;
 }
 
-.informacoes h3 {
-  font-size: 18px;
-  font-weight: bold;
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 footer {
   background-color: #2d5238;

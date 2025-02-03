@@ -1,5 +1,5 @@
 <script setup>
-import RestauranteDAO from "@/services/RestauranteDAO";
+import FirestoreDAO from "@/services/FirestoreDAO";
 import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import Avaliacoes from "../components/Avaliacoes.vue";
@@ -7,17 +7,18 @@ import Footer from "../components/Footer.vue";
 import NavBar from "../components/NavBar.vue";
 
 const route = useRoute();
-const restauranteId = route.params.id;
+const restauranteId = computed(() => route.params.id);
 
-const restauranteDAO = new RestauranteDAO();
+const restauranteDAO = new FirestoreDAO();
+
 const restaurante = ref({});
 const images = ref([]);
 const currentPage = ref(1);
 const itemsPerPage = 1;
 
-const carregarRestaurante = async () => {
+const carregarRestaurante = async (id) => {
 try {
-const dados = await restauranteDAO.getRestauranteById(restauranteId);
+const dados = await restauranteDAO.getRestauranteById(id);
 restaurante.value = dados;
 images.value = dados.imagens || [];
 } catch (error) {
@@ -25,13 +26,16 @@ console.error("Erro ao carregar restaurante:", error);
 }
 };
 
-onMounted(carregarRestaurante);
+onMounted(() => {
+carregarRestaurante(restauranteId.value);
+});
 
-const totalPages = computed(() => Math.ceil(images.value.length / itemsPerPage));
+const totalPages = computed(() =>
+Math.ceil(images.value.length / itemsPerPage)
+);
 const paginatedImages = computed(() => {
 const start = (currentPage.value - 1) * itemsPerPage;
-const end = start + itemsPerPage;
-return images.value.slice(start, end);
+return images.value.slice(start, start + itemsPerPage);
 });
 
 const goToPage = (page) => {
@@ -40,64 +44,67 @@ currentPage.value = page;
 }
 };
 
+
 const mapUrl = computed(() => {
-return `https://www.google.com/maps/embed?pb=${restaurante.value.mapUrl}`;
+return restaurante.value.mapUrl
+? `https://www.google.com/maps/embed?pb=${restaurante.value.mapUrl}`
+: "";
 });
 </script>
 <template>
 <div>
-    <NavBar />
-    <div id="galeria">
-    <div class="image" v-for="(image, index) in paginatedImages" :key="index">
-        <img :src="image" :alt="restaurante.nome" />
-    </div>
-    </div>
+<NavBar />
+<div id="galeria">
+<div class="image" v-for="(image, index) in paginatedImages" :key="index">
+    <img :src="image" :alt="restaurante.nome" />
+</div>
+</div>
 
-    <div id="paginacao">
-    <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1">
-        Anterior
-    </button>
-    <span
-        v-for="page in totalPages"
-        :key="page"
-        :class="{ active: page === currentPage }"
-        @click="goToPage(page)"
-    >
-        {{ page }}
-    </span>
-    <button
-        @click="goToPage(currentPage + 1)"
-        :disabled="currentPage === totalPages"
-    >
-        Próximo
-    </button>
-    </div>
+<div id="paginacao">
+<button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1">
+    Anterior
+</button>
+<span
+    v-for="page in totalPages"
+    :key="page"
+    :class="{ active: page === currentPage }"
+    @click="goToPage(page)"
+>
+    {{ page }}
+</span>
+<button
+    @click="goToPage(currentPage + 1)"
+    :disabled="currentPage === totalPages"
+>
+    Próximo
+</button>
+</div>
 
-    <div class="titulo">
-    <h1>{{ restaurante.nome }}</h1>
-    </div>
+<div class="titulo">
+<h1>{{ restaurante.nome }}</h1>
+</div>
 
-    <section class="informacao">
-    <h2>Informações</h2>
-    <p>{{ restaurante.informacoes }}</p>
-    </section>
+<section class="informacao">
+<h2>Informações</h2>
+<p>{{ restaurante.informacoes }}</p>
+</section>
 
-    <section class="localizacao">
-    <h2>Localização</h2>
-    <iframe
-        :src="mapUrl"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-    </section>
+<section class="localizacao">
+<h2>Localização</h2>
+<iframe
+    :src="mapUrl"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+</section>
 
-    <Avaliacoes />
+<Avaliacoes />
 
-    <Footer />
+<Footer />
 </div>
 </template>
 <style scoped>
