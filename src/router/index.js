@@ -76,7 +76,6 @@ import UsinaCatende from "@/views/UsinaCatende.vue";
 import UsinaST from "@/views/UsinaST.vue";
 import VitoriaPS from "@/views/VitoriaPS.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import RestauranteDetalhe from '../components/RestauranteDetalhe.vue';
 import FirestoreDAO from '../services/FirestoreDAO';
 
 const routes = [
@@ -158,7 +157,7 @@ const routes = [
   { path: "/Litorais", name: "Litorais",component: Litorais},
   { path: '/restaurantesCard', name: 'RestaurantesCard', component: RestauranteCard },
   { path: '/servicos', name: 'Servicos', component: FirestoreDAO },
-  {path:'/restaurante/:slug/:id', name:"DetalheRestaurante" ,component: RestauranteDetalhe},
+  {path:'/restaurante/id', name:"RestauranteDetalhe" ,component: () => ('@/views/RestauranteDetalhe.vue'), props:true},
   {path:'/firestoreDAO', name:"firestoreDAO" ,component: FirestoreDAO},
 
 ];

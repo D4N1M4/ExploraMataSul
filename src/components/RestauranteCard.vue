@@ -1,4 +1,5 @@
 <script setup>
+import logosite from '../assets/logosite.png';
 if (typeof require !== 'function') {
 var require = function(module) {
 };
@@ -8,23 +9,26 @@ import { computed } from 'vue';
 const props = defineProps({
 nome: {
 type: String,
-import: true
+required: true
 },
+
+titulo: String,
+
 imagens: {
 type: Array,
-requered: false,
+required: false,
 default: () => []
 },
 categoria: {
 type: String,
-requered: true
+required: true
 },
 });
 
 const maxLength = 100;
 
 const fullImageUrl = computed(() => {
-return props.imagens.length > 0 ? props.imagens[0] : require('../assets/logosite.png');
+return props.imagens.length > 0 ? props.imagens[0] : logosite;
 });
 </script>
 <template>

@@ -1,10 +1,12 @@
 <script setup>
 import BarraDePesquisa from '@/components/BarraDePesquisa.vue';
 import { computed, onMounted, ref } from "vue";
+import { useRouter } from 'vue-router';
 import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
 import RestauranteCard from '../components/RestauranteCard.vue';
 import FirestoreDAO from '../services/FirestoreDAO';
+const router = useRouter();
 
 const restaurantes = ref([]);
 const busca = ref("");
@@ -39,6 +41,7 @@ const pagesToShow = computed(() => {
 const getRestaurantes = async () => {
   try {
     restaurantes.value = await restauranteDAO.getAll();
+    console.log("Restaurantes carregados:", restaurantes.value);
   } catch (error) {
     console.error("Erro ao buscar restaurantes:", error);
   }
@@ -89,7 +92,9 @@ onMounted(() => {
           <RestauranteCard
             v-for="restaurante in paginatedRestaurantes"
             :key="restaurante.id"
+            :nome="restaurante.nome"
             :titulo="restaurante.nome"
+            :categoria="restaurante.categoria"
             :descricao="restaurante.informacoes"
             :image-src="restaurante.imagens.length > 0 ? restaurante.imagens[0] : ''"
             @click="detalharRestaurante(restaurante.id)"
