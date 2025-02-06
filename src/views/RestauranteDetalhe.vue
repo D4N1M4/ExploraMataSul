@@ -18,7 +18,7 @@ const itemsPerPage = 1;
 
 const carregarRestaurante = async (id) => {
 try {
-const dados = await restauranteDAO.getRestauranteById(id);
+const dados = await restauranteDAO.getById(id);
 restaurante.value = dados;
 images.value = dados.imagens || [];
 } catch (error) {

@@ -31,6 +31,7 @@ const fullImageUrl = computed(() => {
 return props.imagens.length > 0 ? props.imagens[0] : logosite;
 });
 </script>
+
 <template>
 <div class="card mb-3 custom-card">
     <img :src="fullImageUrl" class="card-img-top" alt="Imagem do Local">
