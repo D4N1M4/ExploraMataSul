@@ -1,11 +1,7 @@
 <script setup>
-import logosite from '../assets/logosite.png';
-if (typeof require !== 'function') {
-var require = function(module) {
-};
-}
-
 import { computed } from 'vue';
+import logosite from '../assets/logosite.png';
+
 const props = defineProps({
 nome: {
 type: String,
@@ -28,8 +24,11 @@ required: true
 const maxLength = 100;
 
 const fullImageUrl = computed(() => {
-return props.imagens.length > 0 ? props.imagens[0] : logosite;
+return props.imagens && props.imagens.length > 0 &&  props.imagens[0] ? props.imagens[0]: logosite;
 });
+
+console.log('Imagens recebidas:', props.imagens);
+console.log('URL da imagem usada:', fullImageUrl.value);
 </script>
 
 <template>
@@ -37,7 +36,7 @@ return props.imagens.length > 0 ? props.imagens[0] : logosite;
     <img :src="fullImageUrl" class="card-img-top" alt="Imagem do Local">
     <div class="card-body">
     <h5 class="card-title">{{ nome }}</h5>
-    <p class="card-category"><strong>Categoria:</strong> {{ categoria }}</p>
+    <p class="card-category"> {{ categoria }}</p>
     </div>
 </div>
 </template>
@@ -49,15 +48,26 @@ height: auto;
 
 .card-img-top {
 width: 200px;
-height: auto;
+height: 150px;
 object-fit: cover;
 display: block;
 margin: 0 auto;
 margin-top: 10px;
 }
-
 .card-body {
 padding: 15px;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.card-category {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0;
 }
 
 .card {
