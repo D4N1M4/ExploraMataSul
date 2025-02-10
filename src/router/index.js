@@ -1,3 +1,4 @@
+import Favoritar from "@/components/Favoritar.vue";
 import Register from "@/components/Register.vue";
 import RestauranteCard from "@/components/RestauranteCard.vue";
 import Avaliacao from "@/views/Avaliacao.vue";
@@ -76,9 +77,9 @@ import UsinaCatende from "@/views/UsinaCatende.vue";
 import UsinaST from "@/views/UsinaST.vue";
 import VitoriaPS from "@/views/VitoriaPS.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import LocaisFavoritos from "../components/LocaisFavoritos.vue";
 import FirestoreDAO from '../services/FirestoreDAO';
 import RestauranteDetalhe from "../views/RestauranteDetalhe.vue";
-
 
 const routes = [
   { path: "/Historico", name:"Historico", component: Historico },
@@ -161,6 +162,8 @@ const routes = [
   { path: '/servicos', name: 'Servicos', component: FirestoreDAO },
   {path:'/restauranteDetalhe/:id', name:"RestauranteDetalhe" ,component: RestauranteDetalhe, props:true},
   {path:'/firestoreDAO', name:"firestoreDAO" ,component: FirestoreDAO},
+  {path:'/Favoritar', name:"Favoritar" ,component: Favoritar},
+  {path:'/LocaisFavoritos', name:"LocaisFavoritos" ,component: LocaisFavoritos},
 
 ];
 

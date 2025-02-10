@@ -74,7 +74,30 @@ try {
     throw new Error("Erro ao inserir local no banco de dados");
 }
 }
+
+async addFavorite(userId, restauranteId) {
+try {
+    const userDocRef = doc(db, 'users', userId);
+    await updateDoc(userDocRef, {
+    favoritos: arrayUnion(restauranteId)
+    });
+} catch (error) {
+    console.error('Erro ao adicionar favorito: ', error);
+    throw new Error('Erro ao adicionar favorito');
+}
 }
 
+async removeFavorite(userId, restauranteId) {
+try {
+    const userDocRef = doc(db, 'users', userId);
+    await updateDoc(userDocRef, {
+    favoritos: arrayRemove(restauranteId)
+    });
+} catch (error) {
+    console.error('Erro ao remover favorito: ', error);
+    throw new Error('Erro ao remover favorito');
+}
+}
+}
 
 export default FirestoreDAO;

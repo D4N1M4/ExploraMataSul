@@ -3,6 +3,7 @@ import FirestoreDAO from "@/services/FirestoreDAO";
 import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import Avaliacoes from "../components/Avaliacoes.vue";
+import Favoritar from "../components/Favoritar.vue";
 import Footer from "../components/Footer.vue";
 import NavBar from "../components/NavBar.vue";
 
@@ -82,8 +83,8 @@ return restaurante.value.mapUrl
 
 <div class="titulo">
 <h1>{{ restaurante.nome }}</h1>
+<Favoritar :localId="restauranteId" :favoritadoInicialmente="false" />
 </div>
-
 <section class="informacao">
 <h2>Informações</h2>
 <p>{{ restaurante.informacoes }}</p>
@@ -198,11 +199,18 @@ background-color: #03ff4e;
 color: #fff;
 font-weight: bold;
 }
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 .titulo h1 {
 text-align: center;
 font-size: 2.5rem;
 margin: 20px 0;
 color: #2d5238;
+gap: 10px;
 }
 
 .titulo p {

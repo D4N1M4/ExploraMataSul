@@ -1,18 +1,19 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { auth } from "../firebase"; // Certifique-se de que o caminho está correto
+import LocaisFavoritos from '@/components/LocaisFavoritos.vue';
 import {
-  updateProfile,
+  EmailAuthProvider,
+  onAuthStateChanged,
+  reauthenticateWithCredential,
+  signOut,
   updateEmail,
   updatePassword,
-  onAuthStateChanged,
-  signOut,
-  reauthenticateWithCredential,
-  EmailAuthProvider,
+  updateProfile,
 } from "firebase/auth";
+import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import Footer from "../components/Footer.vue";
 import NavBar from "../components/NavBar.vue";
+import { auth } from "../firebase"; // Certifique-se de que o caminho está correto
 
 const router = useRouter();
 const user = ref(null);
@@ -194,6 +195,9 @@ const logout = async () => {
       <div v-if="successMessage" class="success">{{ successMessage }}</div>
       <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
 
+    </div>
+    <div class="profile-container">
+      <LocaisFavoritos />
     </div>
     <Footer />
   </div>
