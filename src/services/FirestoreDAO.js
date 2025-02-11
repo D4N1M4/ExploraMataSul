@@ -12,7 +12,7 @@ try {
     return {
         id: doc.id,
         nome: data.nome,
-        imagens: data.imagens,
+        imagens: data.imagens[0],
         informacoes: data.informacoes,
         categoria: data.categoria,
         cidade: data.cidade,

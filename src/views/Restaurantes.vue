@@ -96,7 +96,7 @@ onMounted(() => {
             :titulo="restaurante.nome"
             :categoria="restaurante.categoria"
             :descricao="restaurante.informacoes"
-            :image-src="restaurante.imagens.length > 0 ? restaurante.imagens[0] : ''"
+            :imagens="restaurante.imagens"
             @click="detalharRestaurante(restaurante.id)"
           />
         </div>

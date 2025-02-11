@@ -11,9 +11,9 @@ required: true
 titulo: String,
 
 imagens: {
-type: Array,
+type: String,
 required: false,
-default: () => []
+default: ''
 },
 categoria: {
 type: String,
@@ -24,7 +24,9 @@ required: true
 const maxLength = 100;
 
 const fullImageUrl = computed(() => {
-return props.imagens && props.imagens.length > 0 &&  props.imagens[0] ? props.imagens[0]: logosite;
+  // let url = props.imagens && props.imagens.length > 0 &&  props.imagens ? props.imagens: logosite;
+  let url = props.imagens;
+  return url;
 });
 
 console.log('Imagens recebidas:', props.imagens);
