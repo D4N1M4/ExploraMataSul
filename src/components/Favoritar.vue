@@ -31,7 +31,6 @@ props: {
     type: Boolean,
     default: false,
     },
-    // Propriedades adicionais para armazenar os dados do local:
     nome: {
     type: String,
     default: "",
@@ -55,7 +54,10 @@ setup(props, { emit }) {
     const favoritoRef = doc(db, `usuarios/${user.uid}/favoritos`, props.localId);
     const favoritoSnap = await getDoc(favoritoRef);
     favoritado.value = favoritoSnap.exists();
-    });
+    } 
+    catch (error) {
+        console.error("Erro ao verificar favorito:", error);
+    }
 
     const alternarFavorito = async () => {
     const user = auth.currentUser;
@@ -63,11 +65,9 @@ setup(props, { emit }) {
     const favoritoRef = doc(db, `usuarios/${user.uid}/favoritos`, props.localId);
 
     if (favoritado.value) {
-        // Desfavorita removendo o documento
         await deleteDoc(favoritoRef);
     } else {
-        // Ao favoritar, salva também os detalhes do local
-        await setDoc(favoritoRef, { 
+        await setDoc(favoritoRef, {
         id: props.localId,
         nome: props.nome,
         imagens: props.imagens,
