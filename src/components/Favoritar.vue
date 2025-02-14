@@ -36,8 +36,8 @@ props: {
     default: "",
     },
     imagens: {
-    type: Array,
-    default: () => [],
+    type: String,
+    default:"",
     },
     categoria: {
     type: String,
@@ -65,7 +65,7 @@ const alternarFavorito = async () => {
         await setDoc(favoritoRef, {
         id: props.localId,
         nome: props.nome,
-        imagens: props.imagens ||[],
+        imagens: props.imagens,
         categoria: props.categoria
         });
     }

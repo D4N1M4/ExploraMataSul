@@ -87,26 +87,32 @@ class FirestoreDAO {
       }
 async addFavorite(userId, restauranteId) {
 try {
-    const userDocRef = doc(db, 'users', userId);
-    await updateDoc(userDocRef, {
-    favoritos: arrayUnion(restauranteId)
+    const userDocRef = doc(db, 'usuarios', userId, 'favoritos', local.id);
+    await setDoc(favoritoDocRef, {
+      id: local.id,
+      nome: local.nome,
+      imagens: Array.isArray(local.imagens) ? local.imagens[0] : local.imagens,
+      categoria: local.categoria,
     });
-} catch (error) {
+    
+    console.log("Favorito adicionado com sucesso!");
+  } catch (error) {
     console.error('Erro ao adicionar favorito: ', error);
     throw new Error('Erro ao adicionar favorito');
-}
+  }
 }
 
-async removeFavorite(userId, restauranteId) {
-try {
-    const userDocRef = doc(db, 'users', userId);
-    await updateDoc(userDocRef, {
-    favoritos: arrayRemove(restauranteId)
-    });
-} catch (error) {
+async removeFavorite(userId, localId) {
+  try {
+    const favoritoDocRef = doc(db, 'usuarios', userId, 'favoritos', localId);
+  
+    await deleteDoc(favoritoDocRef);
+    
+    console.log("Favorito removido com sucesso!");
+  } catch (error) {
     console.error('Erro ao remover favorito: ', error);
     throw new Error('Erro ao remover favorito');
-}
+  }
 }
 }
 

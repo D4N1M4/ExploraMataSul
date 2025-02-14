@@ -5,8 +5,8 @@
     <div class="locais-grid" v-else>
     <div v-for="local in favoritos" :key="local.id" class="favorito-container">
         <router-link :to="{ name: 'RestauranteDetalhe', params: { id: local.id } }" class="card-link">
-        <RestauranteCard 
-            :nome="local.nome ?? 'Nome não disponível'" 
+        <RestauranteCard
+            :nome="local.nome ?? 'Nome não disponível'"
             :categoria="local.categoria ?? 'Categoria não disponível'"
             :imagens="local.imagens"
         />
