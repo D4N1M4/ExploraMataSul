@@ -44,7 +44,6 @@ favoritos.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
 console.log("Locais favoritos carregados:", favoritos.value);
 };
-
 onMounted(() => {
 carregarFavoritos();
 });

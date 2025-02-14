@@ -54,30 +54,24 @@ setup(props, { emit }) {
     const favoritoRef = doc(db, `usuarios/${user.uid}/favoritos`, props.localId);
     const favoritoSnap = await getDoc(favoritoRef);
     favoritado.value = favoritoSnap.exists();
-    } 
-    catch (error) {
-        console.error("Erro ao verificar favorito:", error);
-    }
-
-    const alternarFavorito = async () => {
+});
+const alternarFavorito = async () => {
     const user = auth.currentUser;
     if (!user) return;
     const favoritoRef = doc(db, `usuarios/${user.uid}/favoritos`, props.localId);
-
     if (favoritado.value) {
         await deleteDoc(favoritoRef);
     } else {
         await setDoc(favoritoRef, {
         id: props.localId,
         nome: props.nome,
-        imagens: props.imagens,
+        imagens: props.imagens ||[],
         categoria: props.categoria
         });
     }
     favoritado.value = !favoritado.value;
     emit("atualizarFavoritos");
     };
-
     return { favoritado, alternarFavorito };
 },
 };
