@@ -85,13 +85,14 @@ class FirestoreDAO {
           throw new Error("Erro ao inserir local no banco de dados");
         }
       }
-async addFavorite(userId, restauranteId) {
+async addFavorite(userId, local) {
 try {
-    const userDocRef = doc(db, 'usuarios', userId, 'favoritos', local.id);
+    const favoritoDocRef = doc(db, 'usuarios', userId, 'favoritos', local.id);
+    const imagemFavorita = Array.isArray(local.imagens) ? local.imagens[0] : local.imagens;
     await setDoc(favoritoDocRef, {
       id: local.id,
       nome: local.nome,
-      imagens: Array.isArray(local.imagens) ? local.imagens[0] : local.imagens,
+      imagens: imagemFavorita,
       categoria: local.categoria,
     });
     
