@@ -83,7 +83,7 @@ onMounted(() => {
       <div class="imagem-banner">
         <img src="https://github.com/evellysilva/explora_mataSul-imgs/blob/main/Restaurantes/parrilha%20Prime/Screenshot_20250129_021304_Instagram.jpg?raw=true" />
         <div class="texto-banner">
-          <div class="restaurantes">Restaurantes Mais Bem Avaliados</div>
+          <div class="restaurantes">Restaurantes</div>
         </div>
       </div>
     </div>
