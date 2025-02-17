@@ -50,7 +50,7 @@ async function createAccount() {
 
     successMessage.value = `Conta criada com sucesso! Bem-vindo(a), ${name.value}`;
 
-    // Salvar dados adicionais no localStorage (substitua isso por integração com banco de dados se necessário)
+    // Salvar dados adicionais no localStorage
     localStorage.setItem('userName', name.value);
     localStorage.setItem('userEmail', userCredential.user.email);
     localStorage.setItem('userBirthDate', birthDate.value);

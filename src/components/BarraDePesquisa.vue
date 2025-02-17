@@ -36,8 +36,8 @@ const routerInstance = useRouter();
 const rotasDisponiveis = router.getRoutes().map((rota) => ({
   nome: rota.name || '',
   path: rota.path,
-  city: rota.meta?.city || '', // Cidade definida no meta da rota
-  category: rota.meta?.category || '', // Categoria definida no meta da rota
+  city: rota.meta?.city || '', 
+  category: rota.meta?.category || '',
 }));
 
 function atualizarSugestoes() {
@@ -49,7 +49,7 @@ function atualizarSugestoes() {
       rota.category.toLowerCase().includes(termo)
     );
   } else {
-    sugestoes.value = []; // Limpa as sugestões se o input estiver vazio
+    sugestoes.value = []; 
   }
 }
 

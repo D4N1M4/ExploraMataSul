@@ -7,10 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
-  service: "gmail", // Ou outro provedor
+  service: "gmail", 
   auth: {
     user: "dms24@discente.ifpe.edu.br",
-    pass: "Maria1425", // Use senhas específicas para aplicativos se usar Gmail
+    pass: "Maria1425", 
   },
 });
 
